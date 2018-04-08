@@ -2,24 +2,29 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color; // Need Color and Font for drawing ScoreBar
 import java.awt.Font;
 
-public class InfoBar extends Actor
+public class TradeInfo extends Actor
 {
-   private GreenfootImage image = new GreenfootImage(960,50);
+   private GreenfootImage image = new GreenfootImage(200,150);
    private Color textColor = new Color(255,255,255);
    private Font textFont = new Font("Helvetica", Font.PLAIN, 20);
-   private String space = "        ";
-   private String space1 = "       ";
+   private String space = "         ";
    
-   public InfoBar(){
+   public TradeInfo(){
        image.setColor(textColor);
        image.setFont(textFont);
-       image.drawString(zeroAdder(0,6) + space + zeroAdder(0,6)+ space1 +zeroAdder(0,6) + space + zeroAdder(0,6)+ space +zeroAdder(0,6)+ space +zeroAdder(0,6),40,30);
+       image.drawString(zeroAdder(0,3) + space + zeroAdder(0,3),51,26);
+       image.drawString(zeroAdder(0,3) + space + zeroAdder(0,3),51,61);
+       image.drawString(zeroAdder(0,3) + space + zeroAdder(0,3),51,97);
+       image.drawString(zeroAdder(0,3) + space + zeroAdder(0,3),51,135);
        setImage(image);
    }
    
-   public void update(int corn,int cucumber,int potato,int strawberry, int tomato, int radish){
+   public void update(int cornP,int cucumberP,int potatoP,int strawberryP, int tomatoP, int radishP){
        image.clear();
-       image.drawString(zeroAdder(corn,6) + space + zeroAdder(cucumber,6)+ space1 +zeroAdder(potato,6) + space + zeroAdder(strawberry,6)+ space +zeroAdder(tomato,6)+ space +zeroAdder(radish,6),40,30);
+       image.drawString(zeroAdder(cornP,3) + space + zeroAdder(strawberryP,3),51,26);
+       image.drawString(zeroAdder(cucumberP,3) + space + zeroAdder(tomatoP,3),51,61);
+       image.drawString(zeroAdder(potatoP,3) + space + zeroAdder(radishP,3),51,97);
+       image.drawString(zeroAdder(0,3) + space + zeroAdder(0,3),51,135);
        setImage(image);
    }
    
