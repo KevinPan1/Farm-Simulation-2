@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bushes extends Building
+public class Bushes extends Actor
 {
     /**
      * Act - do whatever the Bushes wants to do. This method is called whenever
