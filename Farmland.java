@@ -15,13 +15,8 @@ public class Farmland extends Building
     private int wetTimer = 0;
     private Crop plant;
     
-    public Farmland(int type){
-        this.type=type;
-        createNewPlant(type);
-    }
-    
-    private void createNewPlant(int type){
-         if(type==0){
+    public void plant(int type){
+        if(type==0){
             plant=new Corn(this);
         }else if(type==1){
             plant=new Tomato(this);
@@ -34,13 +29,11 @@ public class Farmland extends Building
         }else if(type==5){
             plant=new Cucumber(this);
         }
+        getWorld().addObject(plant,getX(),getY());
+        plantInWorld=true;
     }
     
     public void act(){
-        if(!plantInWorld){
-            getWorld().addObject(plant,getX(),getY());
-            plantInWorld=true;
-        }
         if(isWet&&wetTimer==0){
             isWet=false;
             setImage("drySoil.png");
@@ -55,7 +48,6 @@ public class Farmland extends Building
     
     public void removePlant(){
         plantInWorld=false;
-        createNewPlant(type);
     }
     
     public void water(){
@@ -64,5 +56,9 @@ public class Farmland extends Building
             isWet=true;
             setImage("wetSoil.png");
         }
+    }
+    
+    public boolean hasPlant(){
+        return plantInWorld;
     }
 }

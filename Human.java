@@ -14,25 +14,46 @@ public class Human extends Animal
     private int counter;
     private int waterCounter;
     private int cropCounter;
+    private int seedCounter;
     private int direction;
     private List<Actor> land;
     private List<Actor> crops;
+    private List<Actor> seeds;
     private int landIndex=-1;
     private int cropIndex=-1;
+    private int seedIndex=-1;
     private int temp;
     private boolean isWatering;
     private boolean isCroping;
+    private boolean isSeeding; 
     
     public void act(){
+        if(Greenfoot.isKeyDown("up"))
+            run(0,1);
+        else if(Greenfoot.isKeyDown("right"))
+            run(1,1);
+        else if(Greenfoot.isKeyDown("down"))
+            run(2,1);
+        else if(Greenfoot.isKeyDown("left"))
+            run(3,1);
+        
         if(counter>0)
             counter--;
+        if(counter==0&&Greenfoot.isKeyDown("u")){
+            counter=100;
+            placeFarmland();
+        }
         if(!isWatering&&counter==0&&Greenfoot.isKeyDown("o")){
-            counter=1000;
+            counter=100;
             waterCrops();
         }
         if(!isCroping&&counter==0&&Greenfoot.isKeyDown("p")){
-            counter=1000;
+            counter=100;
             collectCrops();
+        }
+        if(!isSeeding&&counter==0&&Greenfoot.isKeyDown("i")){
+            counter=100;
+            plantSeeds();
         }
         if(!isWatering&&landIndex!=-1){
             if(intersects(land.get(landIndex))){
@@ -48,6 +69,13 @@ public class Human extends Animal
                 isCroping=true;
             }else{
                 goTo(crops.get(cropIndex));
+            }
+        }
+        if(!isSeeding&&seedIndex!=-1){
+            if(intersects(seeds.get(seedIndex))){
+                isSeeding=true;
+            }else{
+                goTo(seeds.get(seedIndex));
             }
         }
         if(isWatering){
@@ -82,6 +110,19 @@ public class Human extends Animal
                 }
             }
         }
+        if(isSeeding){
+            seedCounter++;
+            if(seedCounter%10==0){
+                seedCounter=0;
+                isSeeding=false;
+                ((Farmland)seeds.get(seedIndex)).plant(Greenfoot.getRandomNumber(6));
+                if(seedIndex==seeds.size()-1){
+                    seedIndex=-1;
+                }else{
+                    seedIndex++;
+                }
+            }
+        }
     }
     
     public int getWalkImages(){
@@ -90,6 +131,27 @@ public class Human extends Animal
     
     public String getName(){
         return name;
+    }
+    
+    public void placeFarmland(){
+        getWorld().addObject(new Farmland(),getX(),getY());
+    }
+    
+    public void plantSeeds(){
+        seeds = getWorld().getObjects(Farmland.class);
+        for (Iterator<Actor> iter = seeds.listIterator(); iter.hasNext();) {
+            Actor a = iter.next();
+            if (((Farmland)(a)).hasPlant()) {
+                iter.remove();
+            }
+        }
+        if(seeds.size()>0)
+            seedIndex=0;
+    }
+    
+    public void waterCrops(){
+        land = getWorld().getObjects(Farmland.class);
+        landIndex=0;
     }
     
     public void collectCrops(){
@@ -103,12 +165,7 @@ public class Human extends Animal
         if(crops.size()>0)
             cropIndex=0;
     }
-    
-    public void waterCrops(){
-        land = getWorld().getObjects(Farmland.class);
-        landIndex=0;
-    }
-    
+        
     private void goTo(Actor actor){
         if(this.getX()<actor.getX()){
             run(1,1);

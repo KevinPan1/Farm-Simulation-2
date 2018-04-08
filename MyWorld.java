@@ -13,12 +13,12 @@ public class MyWorld extends World
     private Cow cow = new Cow();
     private Chicken chicken = new Chicken();
     private Sheep sheep = new Sheep();
-    private Farmland farmland0 = new Farmland(0);
-    private Farmland farmland1 = new Farmland(1);
-    private Farmland farmland2 = new Farmland(2);
-    private Farmland farmland3 = new Farmland(3);
-    private Farmland farmland4 = new Farmland(4);
-    private Farmland farmland5 = new Farmland(5);
+    private Farmland farmland0 = new Farmland();
+    private Farmland farmland1 = new Farmland();
+    private Farmland farmland2 = new Farmland();
+    private Farmland farmland3 = new Farmland();
+    private Farmland farmland4 = new Farmland();
+    private Farmland farmland5 = new Farmland();
     
     private House house = new House();
     private Barn barn = new Barn();

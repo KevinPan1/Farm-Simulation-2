@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.params=type
-comment0.target=Farmland(int)
-comment1.params=type
-comment1.target=void\ createNewPlant(int)
+comment0.target=void\ plant(int)
+comment1.params=
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ removePlant()
 comment3.params=
-comment3.target=void\ removePlant()
+comment3.target=void\ water()
 comment4.params=
-comment4.target=void\ water()
+comment4.target=boolean\ hasPlant()
 numComments=5
