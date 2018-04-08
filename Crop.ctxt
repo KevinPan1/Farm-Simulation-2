@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment2.params=
+comment2.target=boolean\ isFullGrown()
+comment3.params=
+comment3.target=void\ growCrop()
+comment4.params=
+comment4.target=void\ collect()
+comment5.params=
+comment5.target=int\ getImages()
+numComments=6

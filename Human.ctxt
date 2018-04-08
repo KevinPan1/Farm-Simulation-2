@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=int\ getWalkImages()
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=void\ collectCrops()
+comment4.params=
+comment4.target=void\ waterCrops()
+comment5.params=actor
+comment5.target=void\ goTo(greenfoot.Actor)
+numComments=6

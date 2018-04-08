@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=width\ hasGraph
+comment0.target=KPWidget(int,\ boolean)
+comment0.text=\r\n\ Constructs\ an\ FPS\ display\ with\ a\ user\ specified\ width.\r\n\ The\ Height\ of\ this\ actor\ is\ locked\ with\ respect\ to\ the\ width\ of\ the\ actor.\r\n\ User\ can\ select\ if\ a\ line\ graph\ of\ the\ FPS\ will\ be\ displayed\ through\ the\ hasGraph\ parameter.\r\n\ @param\ width\ Determines\ the\ width\ of\ the\ actor\ in\ pixels.\r\n\ @param\ hasGraph\ Displays\ the\ graph\ if\ true,\ otherwise\ hides\ the\ graph\ if\ false.\r\n
+comment1.params=width\ transparency\ fore\ back\ hasGraph
+comment1.target=KPWidget(int,\ int,\ java.awt.Color,\ java.awt.Color,\ boolean)
+comment1.text=\r\n\ Constructs\ an\ FPS\ display\ with\ a\ user\ specified\ width\ with\ additonal\ apperance\ options.\r\n\ @param\ width\ Determines\ the\ width\ of\ the\ actor\ in\ pixels\r\n\ @param\ transparency\ Sets\ the\ transparency\ of\ the\ meter.\ Accepts\ a\ value\ in\ the\ range\ 0\ to\ 255.\ 0\ is\ completely\ transparent\ (invisible)\ and\ 255\ is\ completely\ opaque.\r\n\ @param\ fore\ Sets\ the\ font\ and\ border\ color\ to\ the\ fore\ Color.\r\n\ @param\ back\ Sets\ the\ background\ color\ to\ the\ back\ Color.\r\n\ @param\ hasGraph\ Displays\ the\ graph\ if\ true,\ otherwise\ hides\ the\ graph\ if\ false.\r\n
+comment2.params=width\ transparency\ fore\ back\ textColor\ hasGraph\ hasBorder
+comment2.target=KPWidget(int,\ int,\ java.awt.Color,\ java.awt.Color,\ java.awt.Color,\ boolean,\ boolean)
+comment2.text=\r\n\ Constructs\ an\ FPS\ display\ with\ a\ user\ specified\ width\ with\ maximum\ apperance\ options.\r\n\ @param\ width\ Determines\ the\ width\ of\ the\ actor\ in\ pixels\r\n\ @param\ transparency\ Sets\ the\ transparency\ of\ the\ meter.\ Accepts\ a\ value\ in\ the\ range\ 0\ to\ 255.\ 0\ is\ completely\ transparent\ (invisible)\ and\ 255\ is\ completely\ opaque.\r\n\ @param\ fore\ Sets\ the\ font\ and\ border\ color\ to\ the\ fore\ Color.\r\n\ @param\ back\ Sets\ the\ background\ color\ to\ the\ back\ Color.\r\n\ @param\ textColor\ Sets\ the\ color\ of\ the\ text.\r\n\ @param\ hasGraph\ Displays\ the\ graph\ if\ true,\ otherwise\ hides\ the\ graph\ if\ false.\r\n\ @param\ hasBorder\ Creates\ an\ rectangular\ outline\ of\ the\ border\ if\ true.\ Actor\ is\ borderless\ if\ false.\r\n
+comment3.params=act
+comment3.target=void\ update(int)
+comment3.text=\r\n\ Updates\ the\ text\ of\ the\ fpsmeter\ based\ on\ the\ given\ an\ act\ number\ by\ the\ user.\r\n\ Calls\ updateGraph\ if\ the\ hasGraph\ variable\ is\ true\r\n\ @param\ act\ The\ act\ number\ that\ the\ greenfoot\ simulation\ is\ on.\r\n
+comment4.params=act\ transparency
+comment4.target=void\ update(int,\ int)
+comment4.text=\r\n\ Updates\ the\ text\ of\ the\ fpsmeter\ based\ on\ the\ given\ an\ act\ number\ by\ the\ user.\r\n\ Calls\ updateGraph\ if\ the\ hasGraph\ variable\ is\ true\r\n\ Allows\ user\ to\ select\ the\ transparency\ of\ the\ filled\ in\ graph.\r\n\ @param\ act\ The\ act\ number\ that\ the\ greenfoot\ simulation\ is\ on.\r\n\ @param\ transparency\ The\ alpha\ value\ of\ the\ color\ that\ the\ graph\ should\ be\ filled\ in\ with\r\n
+comment5.params=act
+comment5.target=void\ updateGraph(int)
+comment5.text=\r\n\ Updates\ the\ graph\ of\ the\ fpsmeter\ with\ new\ values\ and\ draws\ the\ graph\ on\ the\ image\ of\ the\ actor\r\n\ @param\ act\ The\ act\ number\ that\ the\ greenfoot\ simulation\ is\ on.\r\n
+numComments=6
