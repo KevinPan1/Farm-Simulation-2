@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class AppleTree extends Actor
+public class AppleTree extends Aesthetics
 {
     /**
      * Act - do whatever the AppleTree wants to do. This method is called whenever

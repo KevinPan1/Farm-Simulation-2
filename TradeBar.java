@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TradeBar extends Actor
+public class TradeBar extends HUD
 {
     /**
      * Act - do whatever the TradeBar wants to do. This method is called whenever

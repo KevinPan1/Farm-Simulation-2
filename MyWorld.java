@@ -9,6 +9,8 @@ public class MyWorld extends World
     
     private HashMap<String,Integer> inventory = new HashMap<String,Integer>();
     private HashMap<String,Integer> price = new HashMap<String,Integer>();
+    private int cashStart = 5000;
+    private int currentCash;
     private int delta = 10;
     
     private Human player = new Human();
@@ -72,18 +74,22 @@ public class MyWorld extends World
     
     private GreenfootImage bg;  // the main background image
     private GreenfootImage dark; // the 'darkness' image -- used to darken the main bg image
-    private int dayTimer; // to track the time of day
+    private int dayTimer; // to track the time of day   
     private int timeRate = 40; // number of acts per hour (one hour is transition time
     
-    private InfoBar info = new InfoBar();
-    private Bar bar = new Bar();
+    private InventoryBar bar = new InventoryBar();
+    private InventoryInfo info = new InventoryInfo();
     private TradeBar tradeBar = new TradeBar();
     private TradeInfo tradeInfo = new TradeInfo();
+    private CashBar cashBar = new CashBar();
+    private CashInfo cashInfo = new CashInfo();
     
     public MyWorld()
     {    
         super(960, 640, 1); 
         
+        volume();
+        backgroundMusic.playLoop();
         addObject(fps,800,500);
         
         // set main background image (scaled to window)
@@ -94,7 +100,7 @@ public class MyWorld extends World
         background.fill();
         dark = background;
         
-        setPaintOrder(InfoBar.class,Bar.class,Animal.class,Crop.class,Farmland.class);
+        setPaintOrder(InventoryInfo.class,InventoryBar.class,Animal.class,Crop.class,Farmland.class);
         addObject(player, 400, 400);
         addObject(cow, 200, 200);
         addObject(sheep, 300,300);
@@ -211,6 +217,8 @@ public class MyWorld extends World
         inventory.put("radish", 0);
         inventory.put("corn", 0);
         inventory.put("cucumber", 0);
+        inventory.put("eggs",0);
+        inventory.put("milk",0);
         
         price.put("tomato", Greenfoot.getRandomNumber(350));
         price.put("strawberry", Greenfoot.getRandomNumber(350));
@@ -218,11 +226,17 @@ public class MyWorld extends World
         price.put("corn", Greenfoot.getRandomNumber(350));
         price.put("potato", Greenfoot.getRandomNumber(350));
         price.put("cucumber", Greenfoot.getRandomNumber(350));
-
-        addObject(info,480,615);
+        price.put("eggs", Greenfoot.getRandomNumber(350));
+        price.put("milk", Greenfoot.getRandomNumber(350));
+        
         addObject(bar,480,615);
+        addObject(info,480,615);
         addObject(tradeBar,860,75);
         addObject(tradeInfo,860,75);
+        addObject(cashBar,860,175);
+        addObject(cashInfo,860,175);
+        
+        currentCash = cashStart;
     }
     
     public void addCropInventory(String crop){
@@ -232,7 +246,7 @@ public class MyWorld extends World
     private void adjustPrices(){
         for (String key : price.keySet()) {
             price.put(key, price.get(key)+Greenfoot.getRandomNumber(delta*2+1)-delta);
-            if(price.get(key)==0){
+            if(price.get(key)<0){
                 price.put(key,0);
             }
         }
@@ -247,9 +261,11 @@ public class MyWorld extends World
         if(cnt%60==0){
             adjustPrices();
         }
-        info.update(inventory.get("corn"), inventory.get("cucumber"), inventory.get("potato"), inventory.get("strawberry"), inventory.get("tomato"), inventory.get("radish"));
-        tradeInfo.update(price.get("corn"), price.get("cucumber"), price.get("potato"), price.get("strawberry"), price.get("tomato"), price.get("radish"));
-        /*dayTimer = (dayTimer+1)%(24*timeRate); // next moment in time
+        info.update(inventory.get("corn"), inventory.get("cucumber"), inventory.get("potato"), inventory.get("strawberry"), inventory.get("tomato"), inventory.get("radish"), inventory.get("eggs"), inventory.get("milk"));
+        tradeInfo.update(price.get("corn"), price.get("cucumber"), price.get("potato"), price.get("strawberry"), price.get("tomato"), price.get("radish"), price.get("eggs"), price.get("milk"));
+        cashInfo.update(currentCash);
+        
+        dayTimer = (dayTimer+1)%(24*timeRate); // next moment in time
         boolean afterdusk = dayTimer < 12*timeRate; // determine day or night time
         if ((dayTimer/timeRate)%12 == 11) // check if transition hour
         {
@@ -257,13 +273,13 @@ public class MyWorld extends World
             int minute = 60*(dayTimer%timeRate)/timeRate; // determine minute in transition hour
             dark.setTransparency(afterdusk ? 3*minute : 180-3*minute); // adjust darkness
             getBackground().drawImage(dark, 0, 0); // add darkness to main background image
-        }*/
+        }
     }
     
     public void volume()
     {
         //Method for controlling the volume
-        backgroundMusic.setVolume(25);
+        backgroundMusic.setVolume(0);
     }
 }
 

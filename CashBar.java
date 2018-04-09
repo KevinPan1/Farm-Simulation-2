@@ -1,15 +1,15 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Boulder here.
+ * Write a description of class Cash here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Boulder extends Aesthetics
+public class CashBar extends HUD
 {
     /**
-     * Act - do whatever the Boulder wants to do. This method is called whenever
+     * Act - do whatever the Cash wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

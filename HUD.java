@@ -1,30 +1,19 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.awt.Color; // Need Color and Font for drawing ScoreBar
+import greenfoot.*;
+import java.awt.Color;
 import java.awt.Font;
-
-public class InfoBar extends Actor
+/**
+ * Write a description of class HUD here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class HUD extends Actor
 {
-   private GreenfootImage image = new GreenfootImage(960,50);
-   private Color textColor = new Color(255,255,255);
-   private Font textFont = new Font("Helvetica", Font.PLAIN, 20);
-   private String space = "        ";
-   private String space1 = "       ";
-   
-   public InfoBar(){
-       image.setColor(textColor);
-       image.setFont(textFont);
-       image.drawString(zeroAdder(0,6) + space + zeroAdder(0,6)+ space1 +zeroAdder(0,6) + space + zeroAdder(0,6)+ space +zeroAdder(0,6)+ space +zeroAdder(0,6),40,30);
-       setImage(image);
-   }
-   
-   public void update(int corn,int cucumber,int potato,int strawberry, int tomato, int radish){
-       image.clear();
-       image.drawString(zeroAdder(corn,6) + space + zeroAdder(cucumber,6)+ space1 +zeroAdder(potato,6) + space + zeroAdder(strawberry,6)+ space +zeroAdder(tomato,6)+ space +zeroAdder(radish,6),40,30);
-       setImage(image);
-   }
-   
+    protected Color textColor = new Color(255,255,255);
+    protected Font textFont = new Font("Helvetica", Font.PLAIN, 20);
+    
     // mr cohen's shit 
-   /**
+    /**
      * Method that aids in the appearance of the scoreboard by generating
      * Strings that fill in zeros before the score. For example:
      * 
@@ -54,7 +43,7 @@ public class InfoBar extends Actor
         }
 
     }
-    
+
     /**
      * Useful private method that counts the digit in any integer.
      * 

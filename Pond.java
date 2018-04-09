@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Pond extends Actor
+public class Pond extends Aesthetics
 {
     /**
      * Act - do whatever the Pond wants to do. This method is called whenever

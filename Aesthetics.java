@@ -1,15 +1,15 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Bar here.
+ * Write a description of class Aesthetics here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bar extends Actor
+public class Aesthetics extends Actor
 {
     /**
-     * Act - do whatever the Bar wants to do. This method is called whenever
+     * Act - do whatever the Aesthetics wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

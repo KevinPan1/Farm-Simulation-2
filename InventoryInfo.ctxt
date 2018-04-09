@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=TradeInfo()
-comment1.params=cornP\ cucumberP\ potatoP\ strawberryP\ tomatoP\ radishP\ eggsP\ milkP
+comment0.target=InventoryInfo()
+comment1.params=corn\ cucumber\ potato\ strawberry\ tomato\ radish\ eggs\ milk
 comment1.target=void\ update(int,\ int,\ int,\ int,\ int,\ int,\ int,\ int)
 numComments=2

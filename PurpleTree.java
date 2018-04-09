@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PurpleTree extends Actor
+public class PurpleTree extends Aesthetics
 {
     /**
      * Act - do whatever the PurpleTree wants to do. This method is called whenever

@@ -123,6 +123,7 @@ public class Human extends Animal
                 }
             }
         }
+        
     }
     
     public int getWalkImages(){
@@ -165,7 +166,7 @@ public class Human extends Animal
         if(crops.size()>0)
             cropIndex=0;
     }
-        
+    
     private void goTo(Actor actor){
         if(this.getX()<actor.getX()){
             run(1,1);

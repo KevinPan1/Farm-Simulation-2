@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BlossomTree extends Actor
+public class BlossomTree extends Aesthetics
 {
     /**
      * Act - do whatever the BlossomTree wants to do. This method is called whenever
