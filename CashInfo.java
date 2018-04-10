@@ -19,10 +19,12 @@ public class CashInfo extends HUD
     public CashInfo(){
         image.setColor(textColor);
         image.setFont(textFont);
+        //text proper placement
         image.drawString(zeroAdder(0,8),85,30);
         setImage(image);
     }
-
+    
+    //update cash when items are sold
     public void update(int cash){
         image.clear();
         image.drawString(zeroAdder(cash,8), 85,30);

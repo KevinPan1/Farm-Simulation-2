@@ -11,10 +11,12 @@ public class InventoryInfo extends HUD
    public InventoryInfo(){
        image.setColor(textColor);
        image.setFont(textFont);
+       //spacing in between each text
        image.drawString(zeroAdder(0,6) + space + zeroAdder(0,6)+ space1 +zeroAdder(0,6) + space + zeroAdder(0,6)+ space1 +zeroAdder(0,6)+ space1 +zeroAdder(0,6) + space + zeroAdder(0,6)+ space1 + zeroAdder(0,6),50,30);
        setImage(image);
    }
    
+   //method for updating the text for each item
    public void update(int corn,int cucumber,int potato,int strawberry, int tomato, int radish, int eggs, int milk){
        image.clear();
        image.drawString(zeroAdder(corn,6) + space + zeroAdder(cucumber,6)+ space1 +zeroAdder(potato,6) + space + zeroAdder(strawberry,6)+ space1 +zeroAdder(tomato,6)+ space1 +zeroAdder(radish,6) + space + zeroAdder(0,6)+ space1 + zeroAdder(0,6), 50,30);

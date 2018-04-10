@@ -8,7 +8,8 @@ import greenfoot.*;
  */
 public abstract class Animal extends Actor
 {
-    protected int[][] delta = {{0,-1},{1,0},{0,1},{-1,0}}; // 0 -north, 1 - east, 2 - south, 3 - west 
+    // 0 -north, 1 - east, 2 - south, 3 - west 
+    protected int[][] delta = {{0,-1},{1,0},{0,1},{-1,0}}; 
     protected int counter=0;
     protected int temp;
     protected int lastDirection = 2; // maybe used to reset the position
@@ -28,6 +29,7 @@ public abstract class Animal extends Actor
             run(3,1);
     }
     
+    //running along with animations
     protected void run(int direction,int speed){
         counter++;
         if(lastDirection!=direction)
@@ -47,6 +49,7 @@ public abstract class Animal extends Actor
     
     public abstract int getWalkImages();
     
+    //setting directions
     protected void goTo(Actor actor){
         if(this.getX()<actor.getX()){
             run(1,1);

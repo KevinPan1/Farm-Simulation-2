@@ -1,7 +1,24 @@
 import greenfoot.*;
 import java.util.*;
 import java.awt.*;
-
+/*
+ * 
+ * 
+ * 
+ * Sources used for Sprites:
+ * https://www.spriters-resource.com/game_boy_advance/hmfomt/
+ * https://www.spriters-resource.com/ds_dsi/hmdscute/
+ * https://www.spriters-resource.com/ds_dsi/harvestmoon/
+ * https://www.spriters-resource.com/snes/harvestmoon/
+ * https://www.spriters-resource.com/game_boy_advance/mother3/sheet/87184/
+ * https://pokemontilesetstudio.deviantart.com/art/Barn-174684174
+ * https://theartbook35.deviantart.com/art/barn-designs-142403472
+ * http://pixeljoint.com/pixelart/83298.htm 
+ * http://herebemonsters.wikia.com/wiki/File:Raspberry-Bush-Sprite.png 
+ * https://www.spriters-resource.com/pc_computer/mightnmag8/sheet/43041/ 
+ * http://photobucket.com/gallery/user/xrpgmaker2k3/media/cGF0aDpTcHJpdGVzL2diX2x0dHBfZmVuY2UucG5n/?ref= 
+ * http://ct.glos.ac.uk/students/amydilorenzo/2d-graphics/pond-sprite/ 
+ */
 public class MyWorld extends World
 {
     private int cnt;

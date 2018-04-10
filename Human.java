@@ -8,9 +8,11 @@ import java.util.*;
  */
 public class Human extends Animal
 {
+    //used for animation
     private final static String name = "male";
     private final static int walkImages = 3;
     private final static int waterImages = 4;
+    
     private int counter;
     private int waterCounter;
     private int cropCounter;
@@ -24,6 +26,7 @@ public class Human extends Animal
     private int seedIndex=-1;
     private int sellIndex=-1;
     private int temp;
+    //used for farming process
     private boolean isWatering;
     private boolean isCroping;
     private boolean isSeeding; 
@@ -152,6 +155,7 @@ public class Human extends Animal
         }
     }
     
+    //used to return walking images
     public int getWalkImages(){
         return walkImages;
     }
@@ -164,6 +168,7 @@ public class Human extends Animal
         getWorld().addObject(new Farmland(),getX(),getY());
     }
     
+    //method for planting seeds
     public void plantSeeds(){
         seeds = getWorld().getObjects(Farmland.class);
         for (Iterator<Actor> iter = seeds.listIterator(); iter.hasNext();) {
@@ -176,6 +181,7 @@ public class Human extends Animal
             seedIndex=0;
     }
     
+    //method for watering crops
     public void waterCrops(){
         land = getWorld().getObjects(Farmland.class);
         for (Iterator<Actor> iter = land.listIterator(); iter.hasNext();) {
@@ -188,6 +194,7 @@ public class Human extends Animal
             landIndex=0;
     }
     
+    //method for harvesting
     public void collectCrops(){
         crops = getWorld().getObjects(Crop.class);
         for (Iterator<Actor> iter = crops.listIterator(); iter.hasNext();) {
@@ -200,6 +207,7 @@ public class Human extends Animal
             cropIndex=0;
     }
     
+    //method for selling
     public void sellCrops(){
         sellIndex=0;
     }

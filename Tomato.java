@@ -8,9 +8,11 @@ import greenfoot.*;
  */
 public class Tomato extends Crop
 {
+    //6 total images, named tomato
     private final static String NAME = "tomato";
     private final static int IMAGES = 6;
     
+    //place on farmland
     public Tomato(Farmland land){
         this.land = land;
     }

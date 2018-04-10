@@ -8,9 +8,9 @@ import greenfoot.*;
  */
 public class Sheep extends Animal
 {
+    //used for animation
     private final static String name = "sheep";
     private final static int walkImages = 3;
-    
     public int getWalkImages(){
         return walkImages;
     }

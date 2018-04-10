@@ -12,7 +12,6 @@ public class HUD extends Actor
     protected Color textColor = new Color(255,255,255);
     protected Font textFont = new Font("Helvetica", Font.PLAIN, 20);
     
-    // mr cohen's shit 
     /**
      * Method that aids in the appearance of the scoreboard by generating
      * Strings that fill in zeros before the score. For example:

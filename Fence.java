@@ -8,6 +8,7 @@ import greenfoot.*;
  */
 public class Fence extends Building
 {
+    //image is set to multiple types
     public Fence(int type){
         setImage("fence" + type + ".png");
     }
