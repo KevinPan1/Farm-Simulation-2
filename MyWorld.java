@@ -111,8 +111,8 @@ public class MyWorld extends World
         background.fill();
         dark = background;
         
-        setPaintOrder(KPWidget.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
         //order for classes overlapping each other
+        setPaintOrder(KPWidget.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
         addObject(player, 400, 400);
         addObject(cow, 200, 200);
         addObject(sheep, 300,300);
@@ -164,12 +164,12 @@ public class MyWorld extends World
             addObject(fence[i],506+14*(i-62),23);
         }
         
-        //Objects of buildings and pond
+        //Objects of buildings 
         addObject(house,50,50);
         addObject(barn,700,50);
         addObject(coop,400,50);
         addObject(silo,453,40);
-        addObject(pond,850,300); 
+        addObject(market,845,440);
         
         //these types of fence only need to be added once
         addObject(fence1,20,70);
@@ -216,8 +216,6 @@ public class MyWorld extends World
         addObject(bush2,465,570);
         addObject(bush3,485,570);
         addObject(bush4,473,580);
-        
-        addObject(market,845,440);
         
         //set his inventory to zero
         inventory.put("tomato", 0);
@@ -306,18 +304,7 @@ public class MyWorld extends World
         tradeInfo.update(price.get("corn"), price.get("cucumber"), price.get("potato"), price.get("strawberry"), price.get("tomato"), price.get("radish"), price.get("eggs"), price.get("milk"));
         cashInfo.update(currentCash);
         
-<<<<<<< HEAD
-        /*dayTimer = (dayTimer+1)%(24*timeRate); // next moment in time
-        boolean afterdusk = dayTimer < 12*timeRate; // determine day or night time
-        if ((dayTimer/timeRate)%12 == 11) // check if transition hour
-        {
-            setBackground(new GreenfootImage(bg)); // set main background image
-            int minute = 60*(dayTimer%timeRate)/timeRate; // determine minute in transition hour
-            dark.setTransparency(afterdusk ? 3*minute : 180-3*minute); // adjust darkness
-            getBackground().drawImage(dark, 0, 0); // add darkness to main background image
-        }*/
-=======
-        // next moment in time
+        /*// next moment in time
         dayTimer = (dayTimer+1)%(24*timeRate); 
         // determine day or night time
         boolean afterdusk = dayTimer < 12*timeRate; 
@@ -332,8 +319,7 @@ public class MyWorld extends World
             dark.setTransparency(afterdusk ? 3*minute : 180-3*minute); 
             // add darkness to main background image
             getBackground().drawImage(dark, 0, 0); 
-        }
->>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
+        }*/
     }
     
     public void volume()
