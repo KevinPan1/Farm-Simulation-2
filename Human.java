@@ -35,8 +35,7 @@ public class Human extends Animal
         else if(Greenfoot.isKeyDown("down"))
             run(2,1);
         else if(Greenfoot.isKeyDown("left"))
-            run(3,1);
-        
+            run(3,1);        
         if(counter>0)
             counter--;
         if(counter==0&&Greenfoot.isKeyDown("u")){
@@ -72,6 +71,10 @@ public class Human extends Animal
             }
         }
         if(!isSeeding&&seedIndex!=-1){
+            if(((MyWorld)getWorld()).getCurrentCash()<=0){
+                seedIndex=-1;
+                return;
+            }
             if(intersects(seeds.get(seedIndex))){
                 isSeeding=true;
             }else{
@@ -115,6 +118,7 @@ public class Human extends Animal
             if(seedCounter%10==0){
                 seedCounter=0;
                 isSeeding=false;
+                ((MyWorld)getWorld()).changeCash(-1*(25+Greenfoot.getRandomNumber(150)));
                 ((Farmland)seeds.get(seedIndex)).plant(Greenfoot.getRandomNumber(6));
                 if(seedIndex==seeds.size()-1){
                     seedIndex=-1;
@@ -123,7 +127,6 @@ public class Human extends Animal
                 }
             }
         }
-        
     }
     
     public int getWalkImages(){
@@ -165,6 +168,10 @@ public class Human extends Animal
         }
         if(crops.size()>0)
             cropIndex=0;
+    }
+    
+    public void sellCrops(){
+        
     }
     
     private void goTo(Actor actor){

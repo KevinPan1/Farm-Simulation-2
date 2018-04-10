@@ -9,7 +9,7 @@ public class MyWorld extends World
     
     private HashMap<String,Integer> inventory = new HashMap<String,Integer>();
     private HashMap<String,Integer> price = new HashMap<String,Integer>();
-    private int cashStart = 5000;
+    private int cashStart = 1000;
     private int currentCash;
     private int delta = 10;
     
@@ -249,6 +249,22 @@ public class MyWorld extends World
             if(price.get(key)<0){
                 price.put(key,0);
             }
+        }
+    }
+    
+    public int getCurrentCash(){
+        return currentCash;
+    }
+    
+    public void changeCash(int delta){
+        currentCash += delta;
+        if(currentCash<0)
+            currentCash=0;
+    }
+    
+    public void sellProduce(){
+        for(String key: inventory.keySet()){
+            //inventory.
         }
     }
     
