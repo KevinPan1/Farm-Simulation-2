@@ -1,5 +1,9 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Tue Apr 10 14:55:31 EDT 2018
+=======
+#Tue Apr 10 14:55:07 EDT 2018
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target24.type=ClassTarget
 target16.name=Radish
 target13.editor.width=900
@@ -34,8 +38,13 @@ dependency20.from=MyWorld
 dependency27.to=Farmland
 target6.name=CashBar
 target37.width=80
+<<<<<<< HEAD
 target31.height=50
 target39.y=730
+=======
+target39.y=730
+target31.height=50
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target39.x=100
 target31.showInterface=false
 class.Radish.superclass=Crop
@@ -64,8 +73,13 @@ target8.editor.y=20
 target8.editor.x=40
 target20.y=790
 target11.showInterface=false
+<<<<<<< HEAD
 target20.x=10
 target37.editor.y=20
+=======
+target37.editor.y=20
+target20.x=10
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target37.editor.x=40
 target20.editor.y=20
 dependency16.to=Barn
@@ -74,9 +88,15 @@ target25.typeParameters=
 dependency34.from=MyWorld
 dependency5.to=Crop
 target19.height=50
+<<<<<<< HEAD
 target4.y=250
 target23.width=100
 target5.editor.width=970
+=======
+target5.editor.width=970
+target4.y=250
+target23.width=100
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target4.x=100
 target5.showInterface=false
 class.Strawberry.superclass=Crop
@@ -96,8 +116,13 @@ target31.editor.x=40
 dependency46.from=Human
 class.CashBar.superclass=HUD
 dependency21.from=MyWorld
+<<<<<<< HEAD
 target14.width=90
 target7.name=Tomato
+=======
+target7.name=Tomato
+target14.width=90
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target2.width=80
 dependency11.to=Cucumber
 target14.height=50
@@ -133,10 +158,17 @@ dependency35.from=MyWorld
 class.Human.superclass=Animal
 target35.height=50
 target19.editor.y=20
+<<<<<<< HEAD
 target19.editor.x=40
 target36.width=80
 class.Farmland.superclass=Building
 target8.height=50
+=======
+target36.width=80
+target19.editor.x=40
+target8.height=50
+class.Farmland.superclass=Building
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target31.typeParameters=
 dependency23.type=UsesDependency
 target22.showInterface=false
@@ -156,10 +188,17 @@ dependency35.to=InventoryInfo
 target9.typeParameters=
 target27.height=50
 target8.name=Coop
+<<<<<<< HEAD
 target27.width=80
 target7.y=190
 target30.height=50
 target7.x=190
+=======
+target7.y=190
+target27.width=80
+target7.x=190
+target30.height=50
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 class.Cucumber.image=cucumber0.png
 target29.editor.height=700
 target3.height=50
@@ -178,14 +217,24 @@ target22.height=50
 dependency37.type=UsesDependency
 target6.editor.width=900
 target6.width=80
+<<<<<<< HEAD
 target17.editor.height=700
 target7.typeParameters=
+=======
+target7.typeParameters=
+target17.editor.height=700
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency30.to=Animal
 target7.editor.width=900
 target7.editor.y=20
 target27.type=ClassTarget
+<<<<<<< HEAD
 dependency2.type=UsesDependency
 target7.editor.x=40
+=======
+target7.editor.x=40
+dependency2.type=UsesDependency
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target36.editor.y=20
 target32.editor.width=900
 target19.name=Silo
@@ -208,10 +257,17 @@ target39.type=ClassTarget
 target19.showInterface=false
 target14.type=ClassTarget
 target30.editor.y=20
+<<<<<<< HEAD
 target30.editor.x=40
 target37.y=310
 target33.name=Pond
 target37.x=100
+=======
+target37.y=310
+target30.editor.x=40
+target37.x=100
+target33.name=Pond
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target24.naviview.expanded=true
 target14.naviview.expanded=false
 target34.naviview.expanded=false
@@ -224,9 +280,15 @@ target16.editor.width=900
 target11.editor.height=700
 dependency11.type=UsesDependency
 dependency13.to=Farmland
+<<<<<<< HEAD
 target28.naviview.expanded=true
 target18.naviview.expanded=true
 target38.naviview.expanded=false
+=======
+target38.naviview.expanded=false
+target28.naviview.expanded=true
+target18.naviview.expanded=true
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target16.showInterface=false
 dependency2.to=Cow
 target28.editor.width=900
@@ -235,8 +297,13 @@ target29.editor.width=858
 target39.height=50
 target26.y=550
 target26.x=190
+<<<<<<< HEAD
 dependency10.from=Farmland
 target39.typeParameters=
+=======
+target39.typeParameters=
+dependency10.from=Farmland
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target4.type=ClassTarget
 dependency38.type=UsesDependency
 class.Heart.superclass=Aesthetics
@@ -246,14 +313,23 @@ class.Barn.superclass=Building
 target13.showInterface=false
 target2.y=130
 target2.x=10
+<<<<<<< HEAD
 class.Market.superclass=Building
+=======
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target22.name=Human
 dependency37.from=MyWorld
 target31.width=80
 class.Fence.superclass=Building
+<<<<<<< HEAD
 target18.editor.y=-8
 target2.editor.height=573
 target18.editor.x=-8
+=======
+target18.editor.y=131
+target2.editor.height=573
+target18.editor.x=360
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 class.InventoryInfo.superclass=HUD
 target34.height=50
 target15.y=490
@@ -268,19 +344,32 @@ target12.naviview.expanded=true
 dependency25.type=UsesDependency
 target13.editor.y=20
 class.AppleTree.superclass=Aesthetics
+<<<<<<< HEAD
 target13.editor.x=40
 target37.typeParameters=
 target15.type=ClassTarget
 target10.showInterface=false
 target6.naviview.expanded=false
+=======
+target37.typeParameters=
+target13.editor.x=40
+target15.type=ClassTarget
+target6.naviview.expanded=false
+target10.showInterface=false
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target16.naviview.expanded=true
 target34.name=InventoryBar
 class.OakTree.image=treePlain.png
 dependency43.to=TradeInfo
 dependency24.from=Crop
 target29.editor.y=27
+<<<<<<< HEAD
 target29.editor.x=976
 version=2.7.1
+=======
+version=2.7.1
+target29.editor.x=976
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target22.width=80
 target26.height=50
 target34.editor.height=700
@@ -288,8 +377,13 @@ target4.showInterface=false
 class.PurpleTree.image=treeGrapes.png
 target17.width=80
 target5.width=80
+<<<<<<< HEAD
 target21.editor.width=900
 target39.showInterface=false
+=======
+target39.showInterface=false
+target21.editor.width=900
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency37.to=FlowerTree
 target2.height=50
 dependency12.type=UsesDependency
@@ -313,12 +407,21 @@ target21.height=50
 target36.showInterface=false
 target6.editor.y=20
 target6.editor.x=40
+<<<<<<< HEAD
 target10.naviview.expanded=true
 target30.naviview.expanded=true
 target35.editor.y=-8
 target20.naviview.expanded=true
 target29.type=ClassTarget
 target35.editor.x=-8
+=======
+target35.editor.y=-8
+target10.naviview.expanded=true
+target30.naviview.expanded=true
+target20.naviview.expanded=true
+target35.editor.x=-8
+target29.type=ClassTarget
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency4.type=UsesDependency
 dependency32.to=Farmland
 class.TradeInfo.superclass=HUD
@@ -421,8 +524,13 @@ target24.x=190
 dependency39.to=Bushes
 target31.type=ClassTarget
 target4.typeParameters=
+<<<<<<< HEAD
 target18.typeParameters=
 target8.y=310
+=======
+target8.y=310
+target18.typeParameters=
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target8.x=10
 dependency13.from=MyWorld
 target7.type=ClassTarget
@@ -442,7 +550,11 @@ dependency40.to=BlossomTree
 target13.y=490
 target13.x=100
 target25.name=CashInfo
+<<<<<<< HEAD
 target18.editor.width=1936
+=======
+target18.editor.width=1326
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target20.typeParameters=
 dependency34.to=Fence
 target34.width=100
@@ -488,8 +600,13 @@ target10.editor.width=900
 target24.typeParameters=
 target4.width=80
 class.Bushes.superclass=Aesthetics
+<<<<<<< HEAD
 target11.editor.width=900
 target38.showInterface=false
+=======
+target38.showInterface=false
+target11.editor.width=900
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target2.name=Heart
 dependency7.type=UsesDependency
 target16.editor.height=700
@@ -520,8 +637,13 @@ target3.x=10
 target19.type=ClassTarget
 target13.editor.height=700
 dependency31.type=UsesDependency
+<<<<<<< HEAD
 dependency1.to=Human
 target37.editor.width=900
+=======
+target37.editor.width=900
+dependency1.to=Human
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 class.Tomato.superclass=Crop
 target18.showInterface=false
 target38.name=Cucumber
@@ -556,8 +678,13 @@ target19.editor.width=900
 dependency15.from=MyWorld
 target9.type=AbstractTarget
 target4.editor.height=573
+<<<<<<< HEAD
 target37.naviview.expanded=true
 target4.editor.y=284
+=======
+target4.editor.y=284
+target37.naviview.expanded=true
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target27.naviview.expanded=true
 dependency42.from=MyWorld
 target17.naviview.expanded=false
@@ -575,7 +702,10 @@ target2.editor.width=947
 target27.name=Corn
 target3.editor.width=900
 target12.showInterface=false
+<<<<<<< HEAD
 class.Market.image=market.png
+=======
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency42.to=TradeBar
 target33.y=550
 target33.x=10
@@ -588,18 +718,29 @@ dependency36.to=InventoryBar
 target6.showInterface=false
 target27.editor.height=700
 target11.height=50
+<<<<<<< HEAD
 dependency32.type=UsesDependency
 target8.width=80
+=======
+target8.width=80
+dependency32.type=UsesDependency
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target36.typeParameters=
 target39.name=Fence9
 target22.type=ClassTarget
 target14.name=Aesthetics
+<<<<<<< HEAD
 target21.naviview.expanded=false
 target31.naviview.expanded=true
+=======
+target31.naviview.expanded=true
+target21.naviview.expanded=false
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency29.from=MyWorld
 class.AppleTree.image=treeApple.png
 target20.width=80
 target37.height=50
+<<<<<<< HEAD
 target22.y=190
 dependency31.from=Human
 target22.x=10
@@ -616,48 +757,98 @@ target6.y=670
 dependency31.to=Crop
 target12.editor.width=900
 target6.x=100
+=======
+dependency31.from=Human
+target22.y=190
+target22.x=10
+target15.width=90
+target3.showInterface=false
+dependency17.type=UsesDependency
+target24.editor.height=700
+target35.naviview.expanded=true
+target15.naviview.expanded=true
+target25.naviview.expanded=false
+dependency44.type=UsesDependency
+target29.showInterface=false
+target6.y=670
+target6.x=100
+target12.editor.width=900
+dependency31.to=Crop
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 package.numDependencies=46
 target34.type=ClassTarget
 target16.editor.y=20
 target16.editor.x=40
 target9.naviview.expanded=true
 class.Pond.superclass=Aesthetics
+<<<<<<< HEAD
 dependency25.to=MyWorld
 dependency16.from=MyWorld
+=======
+dependency16.from=MyWorld
+dependency25.to=MyWorld
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target19.naviview.expanded=true
 target19.y=250
 target19.x=190
 class.Human.image=maleWalk2.1.png
+<<<<<<< HEAD
 dependency43.from=MyWorld
 target9.height=50
+=======
+target9.height=50
+dependency43.from=MyWorld
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target25.editor.width=900
 class.Tomato.image=tomato0.png
 target32.height=50
 target11.y=730
+<<<<<<< HEAD
 target11.x=10
 target4.name=Barn
 dependency19.to=Pond
 target21.editor.height=700
 dependency9.type=UsesDependency
+=======
+target4.name=Barn
+target11.x=10
+dependency19.to=Pond
+dependency9.type=UsesDependency
+target21.editor.height=700
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency8.to=Potato
 target26.showInterface=false
 target28.name=OakTree
 target38.editor.width=900
 target27.editor.y=20
 target27.editor.x=40
+<<<<<<< HEAD
 mainWindow.height=1096
 dependency8.from=Farmland
 target10.editor.y=20
 target10.editor.x=40
 target28.height=50
 class.Building.superclass=greenfoot.Actor
+=======
+mainWindow.height=1056
+dependency8.from=Farmland
+target10.editor.y=20
+class.Building.superclass=greenfoot.Actor
+target28.height=50
+target10.editor.x=40
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency20.to=AppleTree
 target4.height=50
 class.Coop.image=Coop.png
 dependency33.type=UsesDependency
 target23.showInterface=false
+<<<<<<< HEAD
 target13.naviview.expanded=true
 target23.naviview.expanded=false
+=======
+target23.naviview.expanded=false
+target13.naviview.expanded=true
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 dependency14.to=Crop
 target23.type=ClassTarget
 target15.name=FlowerTree
@@ -668,9 +859,15 @@ target38.editor.y=20
 target38.editor.x=40
 target21.editor.y=171
 target21.editor.x=499
+<<<<<<< HEAD
 target33.width=80
 dependency32.from=Corn
 target7.naviview.expanded=true
+=======
+target7.naviview.expanded=true
+dependency32.from=Corn
+target33.width=80
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target36.y=250
 target36.x=10
 target23.height=50
@@ -679,6 +876,7 @@ target28.width=80
 class.CashInfo.superclass=HUD
 project.charset=UTF-8
 dependency45.type=UsesDependency
+<<<<<<< HEAD
 dependency20.type=UsesDependency
 class.Boulder.superclass=Aesthetics
 target20.showInterface=false
@@ -691,16 +889,39 @@ target3.editor.x=40
 target32.editor.y=20
 dependency44.from=MyWorld
 target32.editor.x=40
+=======
+class.Boulder.superclass=Aesthetics
+dependency20.type=UsesDependency
+target20.showInterface=false
+target35.type=AbstractTarget
+target10.type=ClassTarget
+target4.editor.width=947
+dependency17.from=MyWorld
+target3.editor.y=20
+target3.editor.x=40
+target32.editor.y=20
+target32.editor.x=40
+dependency44.from=MyWorld
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 class.FlowerTree.superclass=Aesthetics
 target35.editor.height=1096
 target30.editor.width=900
 target15.height=50
+<<<<<<< HEAD
 target25.y=670
 target5.name=Farmland
 target25.x=190
 target19.width=80
 target7.width=80
 target18.editor.height=1096
+=======
+target5.name=Farmland
+target25.y=670
+target25.x=190
+target19.width=80
+target7.width=80
+target18.editor.height=794
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target29.name=Cow
 target13.typeParameters=
 target9.y=310
@@ -708,16 +929,26 @@ target9.x=190
 target1.naviview.expanded=true
 class.Silo.image=Silo.png
 target11.naviview.expanded=false
+<<<<<<< HEAD
 dependency9.from=Farmland
 target1.y=10
+=======
+target1.y=10
+dependency9.from=Farmland
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target1.x=70
 dependency44.to=CashBar
 target32.editor.height=700
 target3.width=100
 target5.naviview.expanded=true
 dependency34.type=UsesDependency
+<<<<<<< HEAD
 target10.height=50
 target14.y=730
+=======
+target14.y=730
+target10.height=50
+>>>>>>> e90784fb2abbb823b5f375a7e70e9fefa2234b11
 target14.x=100
 target15.editor.height=700
 dependency38.to=Boulder
