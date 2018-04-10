@@ -15,6 +15,4 @@ comment6.params=
 comment6.target=void\ collectCrops()
 comment7.params=
 comment7.target=void\ sellCrops()
-comment8.params=actor
-comment8.target=void\ goTo(greenfoot.Actor)
-numComments=9
+numComments=8

@@ -15,17 +15,19 @@ public class Human extends Animal
     private int waterCounter;
     private int cropCounter;
     private int seedCounter;
-    private int direction;
+    private int sellCounter;
     private List<Actor> land;
     private List<Actor> crops;
     private List<Actor> seeds;
     private int landIndex=-1;
     private int cropIndex=-1;
     private int seedIndex=-1;
+    private int sellIndex=-1;
     private int temp;
     private boolean isWatering;
     private boolean isCroping;
     private boolean isSeeding; 
+    private boolean isSelling;
     
     public void act(){
         if(Greenfoot.isKeyDown("up"))
@@ -54,8 +56,20 @@ public class Human extends Animal
             counter=100;
             plantSeeds();
         }
+        if(!isSelling&&counter==0&&Greenfoot.isKeyDown("1")){
+            counter=100;
+            sellCrops();
+        }
+        if(!isSelling&&sellIndex!=-1){
+            if(isAt(((MyWorld)getWorld()).getMarket())){
+                isSelling=true;
+                temp=0;
+            }else{
+                goTo(((MyWorld)getWorld()).getMarket());
+            }
+        }
         if(!isWatering&&landIndex!=-1){
-            if(intersects(land.get(landIndex))){
+            if(isAt(land.get(landIndex))){
                 isWatering=true;
                 temp=0;
             }
@@ -64,7 +78,7 @@ public class Human extends Animal
             }
         }
         if(!isCroping&&cropIndex!=-1){
-            if(intersects(crops.get(cropIndex))){
+            if(isAt(crops.get(cropIndex))){
                 isCroping=true;
             }else{
                 goTo(crops.get(cropIndex));
@@ -75,11 +89,20 @@ public class Human extends Animal
                 seedIndex=-1;
                 return;
             }
-            if(intersects(seeds.get(seedIndex))){
+            if(isAt(seeds.get(seedIndex))){
                 isSeeding=true;
             }else{
                 goTo(seeds.get(seedIndex));
             }
+        }
+        if(isSelling){
+            if(temp==100){
+                temp=0;
+                ((MyWorld)(getWorld())).sellProduce();
+                sellIndex=-1;
+                isSelling=false;
+            }
+            temp++;
         }
         if(isWatering){
             if(waterCounter%10==0){
@@ -155,7 +178,14 @@ public class Human extends Animal
     
     public void waterCrops(){
         land = getWorld().getObjects(Farmland.class);
-        landIndex=0;
+        for (Iterator<Actor> iter = land.listIterator(); iter.hasNext();) {
+            Actor a = iter.next();
+            if (!((Farmland)(a)).hasPlant()) {
+                iter.remove();
+            }
+        }
+        if(seeds.size()>0)
+            landIndex=0;
     }
     
     public void collectCrops(){
@@ -171,25 +201,6 @@ public class Human extends Animal
     }
     
     public void sellCrops(){
-        
-    }
-    
-    private void goTo(Actor actor){
-        if(this.getX()<actor.getX()){
-            run(1,1);
-            direction=1;
-        }
-        else if(this.getX()>actor.getX()){
-            run(3,1);
-            direction=3;
-        }
-        else if(this.getY()<actor.getY()){
-            run(2,1);
-            direction=2;
-        }
-        else if(this.getY()>actor.getY()){
-            run(0,1);
-            direction=0;
-        }
+        sellIndex=0;
     }
 }

@@ -83,6 +83,8 @@ public class MyWorld extends World
     private TradeInfo tradeInfo = new TradeInfo();
     private CashBar cashBar = new CashBar();
     private CashInfo cashInfo = new CashInfo();
+   
+    private Market market = new Market();
     
     public MyWorld()
     {    
@@ -100,7 +102,7 @@ public class MyWorld extends World
         background.fill();
         dark = background;
         
-        setPaintOrder(InventoryInfo.class,InventoryBar.class,Animal.class,Crop.class,Farmland.class);
+        setPaintOrder(KPWidget.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
         addObject(player, 400, 400);
         addObject(cow, 200, 200);
         addObject(sheep, 300,300);
@@ -145,32 +147,7 @@ public class MyWorld extends World
         addObject(coop,400,50);
         addObject(silo,453,40);
         addObject(pond,850,300); 
-        //addObject(appleTree,820,180);
-        /*addObject(oakTree0,30,500);
-        addObject(oakTree1,60,497);
-        addObject(oakTree2,90,490);
-        addObject(oakTree3,120,500);
-        addObject(oakTree4,150,505);
-        addObject(oakTree5,185,520);
-        addObject(oakTree6,220,540);
-        addObject(oakTree7,265,560);
-        addObject(oakTree8,45,540);
-        addObject(oakTree9,88,530);
-        addObject(oakTree10,130,550);
-        addObject(oakTree11,160,565);
-        addObject(oakTree12,190,550);
-        addObject(oakTree13,224,570);
-        addObject(oakTree14,248,600);
-        addObject(oakTree15,25,570);
-        addObject(oakTree16,68,560);
-        addObject(oakTree17,97,580);
-        addObject(oakTree18,15,610);
-        addObject(oakTree19,60,615);
-        addObject(oakTree20,110,610);
-        addObject(oakTree21,140,590);
-        addObject(oakTree22,170,605);
-        addObject(oakTree23,200,600);
-        addObject(oakTree24,280,615);*/
+        
         addObject(fence1,20,70);
         addObject(fence2,7,70);
         
@@ -210,6 +187,8 @@ public class MyWorld extends World
         addObject(bush2,465,570);
         addObject(bush3,485,570);
         addObject(bush4,473,580);
+        
+        addObject(market,845,440);
         
         inventory.put("tomato", 0);
         inventory.put("potato", 0);
@@ -264,8 +243,16 @@ public class MyWorld extends World
     
     public void sellProduce(){
         for(String key: inventory.keySet()){
-            //inventory.
+            if(inventory.get(key)==0)
+                continue;
+            int amt = Greenfoot.getRandomNumber(inventory.get(key)+1);
+            changeCash(amt*price.get(key));
+            inventory.put(key,inventory.get(key)-amt);
         }
+    }
+    
+    public Actor getMarket(){
+        return market;
     }
     
     public void act()
@@ -281,7 +268,7 @@ public class MyWorld extends World
         tradeInfo.update(price.get("corn"), price.get("cucumber"), price.get("potato"), price.get("strawberry"), price.get("tomato"), price.get("radish"), price.get("eggs"), price.get("milk"));
         cashInfo.update(currentCash);
         
-        dayTimer = (dayTimer+1)%(24*timeRate); // next moment in time
+        /*dayTimer = (dayTimer+1)%(24*timeRate); // next moment in time
         boolean afterdusk = dayTimer < 12*timeRate; // determine day or night time
         if ((dayTimer/timeRate)%12 == 11) // check if transition hour
         {
@@ -289,7 +276,7 @@ public class MyWorld extends World
             int minute = 60*(dayTimer%timeRate)/timeRate; // determine minute in transition hour
             dark.setTransparency(afterdusk ? 3*minute : 180-3*minute); // adjust darkness
             getBackground().drawImage(dark, 0, 0); // add darkness to main background image
-        }
+        }*/
     }
     
     public void volume()

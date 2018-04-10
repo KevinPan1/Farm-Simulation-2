@@ -14,6 +14,7 @@ public abstract class Animal extends Actor
     protected int lastDirection = 2; // maybe used to reset the position
     protected int lifeSpan;
     protected int age;
+    protected int direction;
     
     public void act() 
     {
@@ -45,4 +46,27 @@ public abstract class Animal extends Actor
     public abstract String getName();
     
     public abstract int getWalkImages();
+    
+    protected void goTo(Actor actor){
+        if(this.getX()<actor.getX()){
+            run(1,1);
+            direction=1;
+        }
+        else if(this.getX()>actor.getX()){
+            run(3,1);
+            direction=3;
+        }
+        else if(this.getY()<actor.getY()){
+            run(2,1);
+            direction=2;
+        }
+        else if(this.getY()>actor.getY()){
+            run(0,1);
+            direction=0;
+        }
+    }
+    
+    protected boolean isAt(Actor actor){
+        return (this.getX()==actor.getX()&&this.getY()==actor.getY());
+    }
 }
