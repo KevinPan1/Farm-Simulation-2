@@ -13,12 +13,17 @@ public class Farmland extends Building
     //starts off dry
     private boolean isWet = false;
     //duration of how long the tile will be wet
-    private int wetDuration = 1000;
+    private int wetDuration;
     //used to check 
     private int wetTimer = 0;
     //crops are declared
     private Crop plant;
     //crops are assigned a number 
+    
+    public Farmland(){
+        wetDuration=1000+Greenfoot.getRandomNumber(1500);
+    }
+    
     public void plant(int type){
         if(type==0){
             plant=new Corn(this);

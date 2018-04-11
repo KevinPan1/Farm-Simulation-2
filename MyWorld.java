@@ -26,7 +26,7 @@ public class MyWorld extends World
     
     private HashMap<String,Integer> inventory = new HashMap<String,Integer>();
     private HashMap<String,Integer> price = new HashMap<String,Integer>();
-    private int cashStart = 500;
+    
     private int currentCash;
     private int delta = 10;
     //country music
@@ -268,7 +268,7 @@ public class MyWorld extends World
         addObject(cashInfo,860,175);
         
         //current cash will be set $1000
-        currentCash = cashStart;
+        currentCash = 2500 + Greenfoot.getRandomNumber(2000);
     }
     
     //crops are added into inventory when harvested

@@ -11,16 +11,20 @@ public abstract class Crop extends Actor
     //growth process of each crop
     protected Farmland land;
     protected int age;
-    protected int animation;
-    protected int lifeSpan = 1000;
+    protected int lifeSpan;
     protected int growth;
-    protected int growthRate = 50;
+    protected int growthRate;
     protected int temp;
     protected boolean fullGrown;
+   
+    public Crop(){
+        growthRate=200+Greenfoot.getRandomNumber(500);
+        lifeSpan=1000+Greenfoot.getRandomNumber(500000);
+    }
     
     public void act() 
     {
-        //age++;
+        age++;
         //will go rotten if not harvested in time
         if(age>lifeSpan){
             setImage(getName()+"Rotten.png");
