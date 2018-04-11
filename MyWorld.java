@@ -134,7 +134,7 @@ public class MyWorld extends World
         dark = background;
         
         //order for classes overlapping each other
-        setPaintOrder(KPWidget.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
+        setPaintOrder(FlowerTree.class, BlossomTree.class, PurpleTree.class,KPWidget.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
         addObject(player, 400, 400);
         addObject(cow, 200, 200);
         addObject(sheep, 300,300);
@@ -319,8 +319,6 @@ public class MyWorld extends World
     
     public void act()
     {
-        
-        System.out.println(task);
         cnt++;
         if(cnt%5==0){
             fps.update(cnt,50);

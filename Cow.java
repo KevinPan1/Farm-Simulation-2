@@ -18,4 +18,5 @@ public class Cow extends Animal
     public String getName(){
         return name;
     }
+    
 }

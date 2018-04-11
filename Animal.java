@@ -8,25 +8,21 @@ import greenfoot.*;
  */
 public abstract class Animal extends Actor
 {
-    // 0 -north, 1 - east, 2 - south, 3 - west 
     protected int[][] delta = {{0,-1},{1,0},{0,1},{-1,0}}; 
     protected int counter=0;
     protected int temp;
     protected int lastDirection = 2; // maybe used to reset the position
     protected int lifeSpan;
     protected int age;
-    protected int direction;
+    protected int direction=0;
     
-    public void act() 
-    {
-        if(Greenfoot.isKeyDown("up"))
-            run(0,1);
-        else if(Greenfoot.isKeyDown("right"))
-            run(1,1);
-        else if(Greenfoot.isKeyDown("down"))
-            run(2,1);
-        else if(Greenfoot.isKeyDown("left"))
-            run(3,1);
+    public void act(){
+        int random = Greenfoot.getRandomNumber(30);
+        if(random==0){
+            int random2=Greenfoot.getRandomNumber(4);
+            direction=random2;
+        }
+        run(direction,1);
     }
     
     //running along with animations
