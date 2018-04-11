@@ -67,17 +67,13 @@ public abstract class Animal extends Actor
     public abstract void harvest();
     
     //setting directions
-<<<<<<< HEAD
     /**
  	* Method for setting directions
  	*
  	* @param actor   used to get xy coordinates
  	* @param speed   set the speed for each direction
  	*/
-    protected void goTo(Actor actor){
-=======
     protected void goTo(Actor actor, int speed){
->>>>>>> a78b704fae1bcda0b4fea89124c3f07e826c9971
         if(this.getX()<actor.getX()){
             run(1,speed);
             direction=1;
