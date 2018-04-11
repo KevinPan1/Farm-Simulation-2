@@ -20,7 +20,7 @@ public abstract class Crop extends Actor
    
     public Crop(){
         growthRate=200+Greenfoot.getRandomNumber(500);
-        lifeSpan=1000+Greenfoot.getRandomNumber(500000);
+        lifeSpan=1000+Greenfoot.getRandomNumber(20000);
     }
     
     public void act() 

@@ -87,7 +87,6 @@ public class Human extends Animal
             }
         }
         if(isAnimaling){
-            System.out.println("damn");
             ((Animal)animals.get(animalIndex)).harvest();
             if(animalIndex==animals.size()-1){
                 animalIndex=-1;

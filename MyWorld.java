@@ -22,7 +22,6 @@ import java.awt.*;
 public class MyWorld extends World
 {
     private int cnt;
-    KPWidget fps = new KPWidget(150,255,Color.BLUE,new Color(0,0,0,0),true);
     
     private HashMap<String,Integer> inventory = new HashMap<String,Integer>();
     private HashMap<String,Integer> price = new HashMap<String,Integer>();
@@ -100,6 +99,7 @@ public class MyWorld extends World
     private GreenfootImage dark; 
     private int dayTimer; // to track the time of day   
     private int timeRate = 40; // number of acts per hour (one hour is transition time
+    private int day;
     
     //HUD is declared
     private InventoryBar bar = new InventoryBar();
@@ -108,7 +108,9 @@ public class MyWorld extends World
     private TradeInfo tradeInfo = new TradeInfo();
     private CashBar cashBar = new CashBar();
     private CashInfo cashInfo = new CashInfo();
-   
+    private DayInfo dayInfo = new DayInfo();
+    private DayBar dayBar = new DayBar();
+    
     private Market market = new Market();
     
     private int task = 0;
@@ -123,7 +125,6 @@ public class MyWorld extends World
         volume();
         //music plays in loop
         backgroundMusic.playLoop();
-        addObject(fps,800,500);
         
         // set main background image (scaled to window)
         GreenfootImage background = new GreenfootImage("sand2.jpg");
@@ -134,7 +135,7 @@ public class MyWorld extends World
         dark = background;
         
         //order for classes overlapping each other
-        setPaintOrder(FlowerTree.class, BlossomTree.class, PurpleTree.class,KPWidget.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
+        setPaintOrder(FlowerTree.class, BlossomTree.class, PurpleTree.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
         addObject(player, 400, 400);
         addObject(cow, 200, 200);
         addObject(sheep, 300,300);
@@ -266,6 +267,8 @@ public class MyWorld extends World
         addObject(tradeInfo,860,75);
         addObject(cashBar,860,175);
         addObject(cashInfo,860,175);
+        addObject(dayBar,890,220);
+        addObject(dayInfo,890,220);
         
         //current cash will be set $1000
         currentCash = 2500 + Greenfoot.getRandomNumber(2000);
@@ -320,9 +323,6 @@ public class MyWorld extends World
     public void act()
     {
         cnt++;
-        if(cnt%5==0){
-            fps.update(cnt,50);
-        }
         if(cnt%60==0){
             adjustPrices();
         }
@@ -353,11 +353,13 @@ public class MyWorld extends World
         if(dayTimer==timeRate*6){
             task=0;
             dayTimer=0;
+            day++;
+            dayInfo.update(day);
+            currentCash-=500;
         }
         info.update(inventory.get("corn"), inventory.get("cucumber"), inventory.get("potato"), inventory.get("strawberry"), inventory.get("tomato"), inventory.get("radish"), inventory.get("eggs"), inventory.get("milk"));
         tradeInfo.update(price.get("corn"), price.get("cucumber"), price.get("potato"), price.get("strawberry"), price.get("tomato"), price.get("radish"), price.get("eggs"), price.get("milk"));
         cashInfo.update(currentCash);
-        
     }
     
     public void animateNight(){

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DayInfo()
+comment1.params=day
+comment1.target=void\ update(int)
+numComments=2
