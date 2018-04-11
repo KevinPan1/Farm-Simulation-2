@@ -50,21 +50,21 @@ public abstract class Animal extends Actor
     public abstract void harvest();
     
     //setting directions
-    protected void goTo(Actor actor){
+    protected void goTo(Actor actor, int speed){
         if(this.getX()<actor.getX()){
-            run(1,1);
+            run(1,speed);
             direction=1;
         }
         else if(this.getX()>actor.getX()){
-            run(3,1);
+            run(3,speed);
             direction=3;
         }
         else if(this.getY()<actor.getY()){
-            run(2,1);
+            run(2,speed);
             direction=2;
         }
         else if(this.getY()>actor.getY()){
-            run(0,1);
+            run(0,speed);
             direction=0;
         }
     }

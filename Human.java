@@ -47,7 +47,7 @@ public class Human extends Animal
                 isSelling=true;
                 temp=0;
             }else{
-                goTo(((MyWorld)getWorld()).getMarket());
+                goTo(((MyWorld)getWorld()).getMarket(),1);
             }
         }
         if(!isWatering&&landIndex!=-1){
@@ -56,14 +56,14 @@ public class Human extends Animal
                 temp=0;
             }
             else{
-                goTo(land.get(landIndex));
+                goTo(land.get(landIndex),1);
             }
         }
         if(!isCroping&&cropIndex!=-1){
             if(isAt(crops.get(cropIndex))){
                 isCroping=true;
             }else{
-                goTo(crops.get(cropIndex));
+                goTo(crops.get(cropIndex),1);
             }
         }
         if(!isSeeding&&seedIndex!=-1){
@@ -76,14 +76,14 @@ public class Human extends Animal
             if(isAt(seeds.get(seedIndex))){
                 isSeeding=true;
             }else{
-                goTo(seeds.get(seedIndex));
+                goTo(seeds.get(seedIndex),1);
             }
         }
         if(!isAnimaling&&animalIndex!=-1){
             if(isAt(animals.get(animalIndex))){
                 isAnimaling=true;
             }else{
-                goTo(animals.get(animalIndex));
+                goTo(animals.get(animalIndex),2);
             }
         }
         if(isAnimaling){
@@ -166,7 +166,7 @@ public class Human extends Animal
                 changeIdle(true);;
                 ((MyWorld)getWorld()).increaseTasks();
             }else{
-                goTo(target);
+                goTo(target,1);
             }
         }
     }

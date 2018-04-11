@@ -146,7 +146,7 @@ public class MyWorld extends World
         
         //order for classes overlapping each other
         setPaintOrder(Explosion.class,FlowerTree.class, BlossomTree.class, PurpleTree.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
-        addObject(player, 400, 400);
+        addObject(player, 50, 50);
         addObject(cow, 200, 200);
         addObject(sheep, 300,300);
         addObject(chicken, 500,500);
@@ -351,10 +351,10 @@ public class MyWorld extends World
             player.collectCrops();
         }else if(task==3&&player.isIdle()){
             player.changeIdle(false);
-            player.sellCrops();
+            player.collectAnimals();
         }else if(task==4&&player.isIdle()){
             player.changeIdle(false);
-            player.collectAnimals();
+            player.sellCrops();
         }else if(task==5&&player.isIdle()){
             player.changeIdle(false);
             player.goHome();
