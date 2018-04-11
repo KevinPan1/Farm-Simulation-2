@@ -22,11 +22,13 @@ public class Human extends Animal
     private List<Actor> land;
     private List<Actor> crops;
     private List<Actor> seeds;
+    private List<Actor> animals;
     private int landIndex=-1;
     private int cropIndex=-1;
     private int seedIndex=-1;
     private int sellIndex=-1;
     private int homeIndex=-1;
+    private int animalIndex=-1;
     private int temp;
     //used for farming process
     private boolean isWatering;
@@ -34,6 +36,7 @@ public class Human extends Animal
     private boolean isSeeding; 
     private boolean isSelling;
     private boolean isResting;
+    private boolean isAnimaling;
     
     private boolean isIdle=true;
     private Actor target;
@@ -64,7 +67,7 @@ public class Human extends Animal
             }
         }
         if(!isSeeding&&seedIndex!=-1){
-            if(((MyWorld)getWorld()).getCurrentCash()<=0){
+            if(((MyWorld)getWorld()).getCurrentCash()<=500+Greenfoot.getRandomNumber(500)){
                 seedIndex=-1;
                 changeIdle(true);;
                 ((MyWorld)getWorld()).increaseTasks();
@@ -74,6 +77,25 @@ public class Human extends Animal
                 isSeeding=true;
             }else{
                 goTo(seeds.get(seedIndex));
+            }
+        }
+        if(!isAnimaling&&animalIndex!=-1){
+            if(isAt(animals.get(animalIndex))){
+                isAnimaling=true;
+            }else{
+                goTo(animals.get(animalIndex));
+            }
+        }
+        if(isAnimaling){
+            System.out.println("damn");
+            ((Animal)animals.get(animalIndex)).harvest();
+            if(animalIndex==animals.size()-1){
+                animalIndex=-1;
+                changeIdle(true);
+                isAnimaling=false;
+                ((MyWorld)getWorld()).increaseTasks();
+            }else{
+                animalIndex++;
             }
         }
         if(isSelling){
@@ -163,6 +185,18 @@ public class Human extends Animal
         getWorld().addObject(new Farmland(),getX(),getY());
     }
     
+    public void collectAnimals(){
+        int random =300+Greenfoot.getRandomNumber(450);
+        animals=getObjectsInRange(random,Chicken.class);
+        animals.addAll(getObjectsInRange(random,Cow.class));
+        if(!animals.isEmpty()){
+            animalIndex=0;
+        }else{
+            changeIdle(true);
+            ((MyWorld)getWorld()).increaseTasks();
+        }
+    }
+    
     //method for planting seeds
     public void plantSeeds(){
         seeds = getWorld().getObjects(Farmland.class);
@@ -192,7 +226,7 @@ public class Human extends Animal
         if(!land.isEmpty()){
             landIndex=0;
         }else{
-            changeIdle(true);;
+            changeIdle(true);
             ((MyWorld)getWorld()).increaseTasks();
         }
     }
@@ -230,5 +264,9 @@ public class Human extends Animal
     
     public boolean isIdle(){
         return isIdle;
+    }
+    
+    public void harvest(){
+        
     }
 }

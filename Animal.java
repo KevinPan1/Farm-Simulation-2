@@ -22,7 +22,9 @@ public abstract class Animal extends Actor
             int random2=Greenfoot.getRandomNumber(4);
             direction=random2;
         }
-        run(direction,1);
+        random = Greenfoot.getRandomNumber(60);
+        if(random!=60)
+            run(direction,1);
     }
     
     //running along with animations
@@ -44,6 +46,8 @@ public abstract class Animal extends Actor
     public abstract String getName();
     
     public abstract int getWalkImages();
+    
+    public abstract void harvest();
     
     //setting directions
     protected void goTo(Actor actor){

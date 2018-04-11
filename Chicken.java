@@ -19,4 +19,11 @@ public class Chicken extends Animal
     public String getName(){
         return name;
     }
+    
+    public void harvest(){
+        int random = 1+Greenfoot.getRandomNumber(3);
+        for(int i=0;i<random;++i){
+            ((MyWorld)getWorld()).addCropInventory("eggs");
+        }
+    }
 }

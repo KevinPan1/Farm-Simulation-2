@@ -341,8 +341,11 @@ public class MyWorld extends World
             player.sellCrops();
         }else if(task==4&&player.isIdle()){
             player.changeIdle(false);
-            player.goHome();
+            player.collectAnimals();
         }else if(task==5&&player.isIdle()){
+            player.changeIdle(false);
+            player.goHome();
+        }else if(task==6&&player.isIdle()){
             dayTimer++;
             animateNight();
         }

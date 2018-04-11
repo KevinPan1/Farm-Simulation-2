@@ -19,4 +19,10 @@ public class Cow extends Animal
         return name;
     }
     
+    public void harvest(){
+        int random = 1+Greenfoot.getRandomNumber(3);
+        for(int i=0;i<random;++i){
+            ((MyWorld)getWorld()).addCropInventory("milk");
+        }
+    }
 }

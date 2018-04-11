@@ -15,6 +15,7 @@ public abstract class Crop extends Actor
     protected int growth;
     protected int growthRate;
     protected int temp;
+    protected boolean rotten;
     protected boolean fullGrown;
    
     public Crop(){
@@ -28,6 +29,7 @@ public abstract class Crop extends Actor
         //will go rotten if not harvested in time
         if(age>lifeSpan){
             setImage(getName()+"Rotten.png");
+            rotten=true;
         }
         if(temp==getImages()&&!fullGrown){
             fullGrown=true;
@@ -53,7 +55,9 @@ public abstract class Crop extends Actor
     //method for collecting crops
     public void collect(){
         //remove plants add to inventory
-        ((MyWorld)getWorld()).addCropInventory(getName());
+        if(!rotten){
+            ((MyWorld)getWorld()).addCropInventory(getName());
+        }
         land.removePlant();
         getWorld().removeObject(this);
     }

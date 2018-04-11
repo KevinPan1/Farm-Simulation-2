@@ -3,4 +3,6 @@ comment0.params=
 comment0.target=int\ getWalkImages()
 comment1.params=
 comment1.target=java.lang.String\ getName()
-numComments=2
+comment2.params=
+comment2.target=void\ harvest()
+numComments=3

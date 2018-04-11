@@ -18,4 +18,8 @@ public class Sheep extends Animal
     public String getName(){
         return name;
     }
+    
+    public void harvest(){
+        
+    }
 }
