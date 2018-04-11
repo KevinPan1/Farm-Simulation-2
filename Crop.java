@@ -20,7 +20,7 @@ public abstract class Crop extends Actor
    
     public Crop(){
         growthRate=200+Greenfoot.getRandomNumber(500);
-        lifeSpan=1000+Greenfoot.getRandomNumber(20000);
+        lifeSpan=1000+Greenfoot.getRandomNumber(50000);
     }
     
     public void act() 
@@ -46,7 +46,7 @@ public abstract class Crop extends Actor
     //method for growing crops
     public void growCrop(){
         growth++;
-        if(temp!=getImages()&&growth%growthRate==0){
+        if(!rotten&&temp!=getImages()&&growth%growthRate==0){
             setImage(getName() + temp + ".png");
             temp++;
         }
@@ -60,6 +60,11 @@ public abstract class Crop extends Actor
         }
         land.removePlant();
         getWorld().removeObject(this);
+    }
+    
+    public void setRotten(){
+        rotten=true;
+        setImage(getName()+"Rotten.png");
     }
     
     protected abstract int getImages();

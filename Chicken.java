@@ -1,4 +1,4 @@
-import greenfoot.*;
+    import greenfoot.*;
 
 /**
  * Write a description of class Chicken here.
@@ -11,6 +11,7 @@ public class Chicken extends Animal
     //used for animation
     private final static String name = "chicken";
     private final static int walkImages = 4;
+    private GreenfootSound chicken = new GreenfootSound("chicken.mp3");
     
     public int getWalkImages(){
         return walkImages;
@@ -21,6 +22,7 @@ public class Chicken extends Animal
     }
     
     public void harvest(){
+        chicken.play();
         int random = 1+Greenfoot.getRandomNumber(3);
         for(int i=0;i<random;++i){
             ((MyWorld)getWorld()).addCropInventory("eggs");

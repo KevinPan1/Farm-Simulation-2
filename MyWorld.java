@@ -2,9 +2,6 @@ import greenfoot.*;
 import java.util.*;
 import java.awt.*;
 /*
- * 
- * 
- * 
  * Sources used for Sprites:
  * https://www.spriters-resource.com/game_boy_advance/hmfomt/
  * https://www.spriters-resource.com/ds_dsi/hmdscute/
@@ -18,6 +15,15 @@ import java.awt.*;
  * https://www.spriters-resource.com/pc_computer/mightnmag8/sheet/43041/ 
  * http://photobucket.com/gallery/user/xrpgmaker2k3/media/cGF0aDpTcHJpdGVzL2diX2x0dHBfZmVuY2UucG5n/?ref= 
  * http://ct.glos.ac.uk/students/amydilorenzo/2d-graphics/pond-sprite/ 
+ * https://www.youtube.com/watch?v=cztadzebEns - turkey sound fx
+ * https://www.youtube.com/watch?v=gu1K5iQTrCQ - cow sound fx
+ * https://www.youtube.com/watch?v=8Kd7LcKbaUA - cash sound fx
+ * https://www.youtube.com/watch?v=Z4sA7l9TC-0 - country music
+ * http://pixelartmaker.com/art/c3d18570de89dd0 - coin
+ * https://hoigaoyen.deviantart.com/art/Pokemon-Egg-Base-Template-256738499 - egg
+ * https://gameblox.org/editor/6680/ - milk
+ * https://www.freelancer.com/contest/Design-a-big-red-button-logo-940451-byentry-12211223.html?utm_expid=294858-566.5XyInbHKSlyskM-GmmPexA.0&utm_referrer=https:%2F%2Fwww.google.ca%2F red button
+ * 
  */
 public class MyWorld extends World
 {
@@ -29,7 +35,9 @@ public class MyWorld extends World
     private int currentCash;
     private int delta = 10;
     //country music
-    GreenfootSound backgroundMusic = new GreenfootSound("countryMusic.mp3");
+    private GreenfootSound backgroundMusic = new GreenfootSound("countryMusic.mp3");
+    
+    private GreenfootSound cash = new GreenfootSound("cash.mp3");
     
     //animal classes are declared
     private Human player = new Human();
@@ -110,6 +118,8 @@ public class MyWorld extends World
     private CashInfo cashInfo = new CashInfo();
     private DayInfo dayInfo = new DayInfo();
     private DayBar dayBar = new DayBar();
+    private Cash cashButton = new Cash();
+    private Nuke nukeButton = new Nuke();
     
     private Market market = new Market();
     
@@ -135,7 +145,7 @@ public class MyWorld extends World
         dark = background;
         
         //order for classes overlapping each other
-        setPaintOrder(FlowerTree.class, BlossomTree.class, PurpleTree.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
+        setPaintOrder(Explosion.class,FlowerTree.class, BlossomTree.class, PurpleTree.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
         addObject(player, 400, 400);
         addObject(cow, 200, 200);
         addObject(sheep, 300,300);
@@ -269,6 +279,8 @@ public class MyWorld extends World
         addObject(cashInfo,860,175);
         addObject(dayBar,890,220);
         addObject(dayInfo,890,220);
+        addObject(cashButton, 925,555);
+        addObject(nukeButton, 865,555);
         
         //current cash will be set $1000
         currentCash = 2500 + Greenfoot.getRandomNumber(2000);
@@ -303,6 +315,7 @@ public class MyWorld extends World
     
     //used to sell product
     public void sellProduce(){
+        cash.play();
         for(String key: inventory.keySet()){
             if(inventory.get(key)==0)
                 continue;
@@ -378,7 +391,7 @@ public class MyWorld extends World
     public void volume()
     {
         //Method for controlling the volume
-        backgroundMusic.setVolume(0);
+        backgroundMusic.setVolume(25);
     }
     
     public void increaseTasks(){
