@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=CashInfo()
+comment0.text=\r\n\ Color\ and\ font\ is\ set\ on\ the\ text.\r\n\ text\ is\ formatted\r\n
 comment1.params=cash
 comment1.target=void\ update(int)
+comment1.text=\r\n\ method\ for\ updating\ cash\ when\ items\ are\ sold.\r\n\r\n\ @param\ cash\ \ text\ is\ updated\ for\ cash\ in\ integers\r\n
 numComments=2

@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=InventoryInfo()
+comment0.text=\r\n\ text\ colors\ and\ font\ is\ taken\ from\ the\ parent\ class.\r\n\ Formats\ the\ text\ used\ for\ each\ item.\r\n
 comment1.params=corn\ cucumber\ potato\ strawberry\ tomato\ radish\ eggs\ milk
 comment1.target=void\ update(int,\ int,\ int,\ int,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ method\ for\ updating\ the\ inventory\ for\ each\ item\ when\ it\ is\ harvested\r\n\r\n\ @param\ corn\ \ \ \ttakes\ amount\ in\ inventory\ for\ corn\ in\ integer\r\n\ @param\ cucumber\ \ \ takes\ amount\ in\ inventory\ for\ cucumber\ in\ integer\r\n\ @param\ potato\ \ttakes\ amount\ in\ inventory\ for\ potato\ in\ integer\r\n\ @param\ strawberry\ takes\ amount\ in\ inventory\ for\ strawberry\ in\ integer\r\n\ @param\ tomato\ \ttakes\ amount\ in\ inventory\ for\ tomato\ in\ integer\r\n\ @param\ radish\ \ttakes\ amount\ in\ inventory\ for\ radish\ in\ integer\r\n\ @param\ eggs\ \ \ \ttakes\ amount\ in\ inventory\ for\ egg\ in\ integer\r\n\ @param\ milk\ \ \ \ttakes\ amount\ in\ inventory\ for\ milk\ in\ integer\r\n
 numComments=2

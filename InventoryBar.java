@@ -1,8 +1,10 @@
 import greenfoot.*;
 /**
  * HUD picture for the inventory
- * @author (your name) 
+ * @author Kevin Pan Haris Syed
+ * @version April 2018
  */
+
 
 public class InventoryBar extends HUD
 {

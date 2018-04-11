@@ -1,17 +1,15 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Building here.
+ * Structures set in the simulation
+ * includes farm tiles
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Kevin Pan, Brian Yip, and Xavier Law
+ * @version April 2018
  */
 public class Building extends Actor
 {
-    /**
-     * Act - do whatever the Building wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public void act() 
     {
         // Add your action code here.

@@ -1,18 +1,26 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Crop()
+comment0.text=\r\n\ constructor\ for\ the\ crops\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ controlls\ the\ growth\ of\ the\ plant\r\n\ determains\ if\ the\ plant\ is\ rotten\ of\ not\r\n
 comment2.params=
 comment2.target=java.lang.String\ getName()
+comment2.text=\r\n\ recived\ the\ subclass'\ name\r\n
 comment3.params=
 comment3.target=boolean\ isFullGrown()
+comment3.text=\r\n\ checks\ if\ the\ plant\ is\ fully\ grown\r\n
 comment4.params=
 comment4.target=void\ growCrop()
+comment4.text=\r\n\ the\ growth\ for\ crops\r\n
 comment5.params=
 comment5.target=void\ collect()
+comment5.text=\r\n\ method\ for\ collecting\ crops,\ removing\ them\ from\ the\ soil\r\n
 comment6.params=
 comment6.target=void\ setRotten()
+comment6.text=\r\n\ checks\ to\ see\ if\ the\ plant\ is\ rotten\ of\ not\ \r\n
 comment7.params=
 comment7.target=int\ getImages()
+comment7.text=\r\n\ recives\ the\ images\ of\ the\ crops\r\n
 numComments=8

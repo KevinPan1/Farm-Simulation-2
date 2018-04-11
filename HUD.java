@@ -2,11 +2,15 @@ import greenfoot.*;
 import java.awt.Color;
 import java.awt.Font;
 /**
- * Write a description of class HUD here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Abstract class for each HUD.
+ * Includes code that each HUD uses.
+ * In this case, these methods are used for adding digits on the HUD.
+ * The color will be white, the font will be Helvetica size 20
+ *
+ * @author Kevin Pan Xavier Law
+ * @version April 2018
  */
+
 public class HUD extends Actor
 {
     protected Color textColor = new Color(255,255,255);

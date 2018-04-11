@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=DayInfo()
+comment0.text=\r\n\ Color\ and\ font\ is\ set\ for\ text\r\n\ text\ is\ properly\ positioned\r\n
 comment1.params=day
 comment1.target=void\ update(int)
+comment1.text=\r\n\ Method\ used\ for\ updating\ the\ amount\ of\ days\r\n\r\n\ @param\ day\ \ days\ takes\ in\ the\ amount\ of\ days\ in\ integers\r\n
 numComments=2

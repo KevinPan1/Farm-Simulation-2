@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Strawberry here.
+ * potato planted by the human
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip and Xavier Law
+ * @version April 2018
  */
 public class Potato extends Crop {
     //4 total images, named potato
@@ -13,14 +13,24 @@ public class Potato extends Crop {
     private final static int lifeSpan = 1000;
     
     //place on farmland
+    /**
+     * places the potato on the the farm tile
+     * @param takes the farmland tile
+     */
     public Potato(Farmland land){
         this.land = land;
     }
     
+    /**
+     * @return sends the name of the class
+     */
     public String getName(){
         return NAME;
     }
     
+    /**
+     * @return sends the image of this plant
+     */
     public int getImages(){
         return IMAGES;
     }

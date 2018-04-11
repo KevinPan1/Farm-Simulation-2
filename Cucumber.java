@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Cucumber here.
+ * cucumber planted by the human
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip and Xavier Law
+ * @version April 2018
  */
 public class Cucumber extends Crop
 {
@@ -13,14 +13,24 @@ public class Cucumber extends Crop
     private final static int IMAGES = 5; 
     
     //place on farmland
+    /**
+     * places the cucumber on the the farm tile
+     * @param takes the farmland tile
+     */
     public Cucumber(Farmland land){
         this.land = land;
     }
     
+    /**
+     * @return sends the name of the class
+     */
     public String getName(){
         return NAME;
     }
     
+    /**
+     * @return sends the image of this plant
+     */
     public int getImages(){
         return IMAGES;
     }

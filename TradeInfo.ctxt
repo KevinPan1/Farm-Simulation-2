@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=TradeInfo()
+comment0.text=\r\n\ Sets\ the\ color\ and\ font\ of\ the\ text.\r\n\ Formats\ the\ spacing\ for\ the\ text\r\n
 comment1.params=cornP\ cucumberP\ potatoP\ strawberryP\ tomatoP\ radishP\ eggsP\ milkP
 comment1.target=void\ update(int,\ int,\ int,\ int,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ Method\ used\ to\ update\ the\ price\ of\ each\ item\r\n\r\n\ @param\ cornP\ \ \ \ttakes\ price\ for\ corn\ in\ integer\r\n\ @param\ cucumberP\ \ \ takes\ price\ for\ cucumber\ in\ integer\r\n\ @param\ potatoP\ \ttakes\ price\ for\ potato\ in\ integer\r\n\ @param\ strawberryP\ takes\ price\ for\ strawberry\ in\ integer\r\n\ @param\ tomatoP\ \ttakes\ price\ for\ tomato\ in\ integer\r\n\ @param\ radishP\ \ttakes\ price\ for\ radish\ in\ integer\r\n\ @param\ eggsP\ \ \ \ttakes\ price\ for\ egg\ in\ integer\r\n\ @param\ milkP\ \ \ \ttakes\ price\ for\ milk\ in\ integer\r\n
 numComments=2

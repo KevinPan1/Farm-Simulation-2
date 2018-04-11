@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Market here.
+ * Image used for the coop
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip and Xavier Law
+ * @version April 2018
  */
 public class Market extends Building
 {

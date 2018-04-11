@@ -1,14 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Farmland()
+comment0.text=\r\n\ Determains\ the\ duration\ of\ the\ wet\ tile\r\n
 comment1.params=type
 comment1.target=void\ plant(int)
+comment1.text=\r\n\ Determains\ the\ type\ of\ plant\ the\ seeds\ are\ for\r\n\ \r\n\ @param\ type\ \ The\ variable\ to\ determaine\ the\ seed\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Checks\ to\ determain\ if\ the\ tile\ is\ wet\ or\ not\ and\ controlls\ the\ duration\ of\ the\ time\ its\ wet\r\n
 comment3.params=
 comment3.target=void\ removePlant()
+comment3.text=\r\n\ checks\ to\ remove\ plant\r\n
 comment4.params=
 comment4.target=void\ water()
+comment4.text=\r\n\ is\ called\ when\ the\ soil\ becomes\ wet\r\n
 comment5.params=
 comment5.target=boolean\ hasPlant()
+comment5.text=\r\n\ Indicates\ if\ theres\ a\ plant\ on\ this\ tile\r\n
 numComments=6

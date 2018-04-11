@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Tomato here.
+ * tomato planted by the human
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip and Xavier Law
+ * @version April 2018
  */
 public class Tomato extends Crop
 {
@@ -13,14 +13,23 @@ public class Tomato extends Crop
     private final static int IMAGES = 6;
     
     //place on farmland
+    /**
+     * places the tomato on the the farm tile
+     * @param takes the farmland tile
+     */
     public Tomato(Farmland land){
         this.land = land;
     }
     
-    public String getName(){
+    /**
+     * @return sends the name of the class
+     */public String getName(){
         return NAME;
     }
     
+    /**
+     * @return sends the image of this plant
+     */
     public int getImages(){
         return IMAGES;
     }

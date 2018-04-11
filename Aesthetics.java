@@ -1,11 +1,14 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Aesthetics here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Aesthetic parent class is used to organize all
+ * pictures used in the simulation for the purpose of
+ * looking good
+ *
+ * @author Brian Yip
+ * @version April 2018
  */
+
 public class Aesthetics extends Actor
 {
     /**

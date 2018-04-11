@@ -1,10 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Farmland here.
+ * Crops that are planted by the human
+ * they grow and change state
+ * they also rot at certain times
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Kevin Pan
+ * @version April 2018
  */
 public abstract class Crop extends Actor
 {
@@ -18,11 +20,20 @@ public abstract class Crop extends Actor
     protected boolean rotten;
     protected boolean fullGrown;
    
-    public Crop(){
+    
+    /**
+     * constructor for the crops 
+     */
+    public Crop()
+    {
         growthRate=200+Greenfoot.getRandomNumber(500);
         lifeSpan=1000+Greenfoot.getRandomNumber(50000);
     }
     
+    /**
+     * controlls the growth of the plant
+     * determains if the plant is rotten of not
+     */
     public void act() 
     {
         age++;
@@ -36,14 +47,23 @@ public abstract class Crop extends Actor
         }
     }  
     
+    /**
+     * recived the subclass' name
+     */
     protected abstract String getName();
     
     //to indicate fully grown
+    /**
+     * checks if the plant is fully grown
+     */
     public boolean isFullGrown(){
         return fullGrown;
     }
     
     //method for growing crops
+    /**
+     * the growth for crops
+     */
     public void growCrop(){
         growth++;
         if(!rotten&&temp!=getImages()&&growth%growthRate==0){
@@ -53,6 +73,9 @@ public abstract class Crop extends Actor
     }
     
     //method for collecting crops
+    /**
+     * method for collecting crops, removing them from the soil
+     */
     public void collect(){
         //remove plants add to inventory
         if(!rotten){
@@ -62,10 +85,17 @@ public abstract class Crop extends Actor
         getWorld().removeObject(this);
     }
     
+    /**
+     * checks to see if the plant is rotten of not 
+     */
     public void setRotten(){
         rotten=true;
         setImage(getName()+"Rotten.png");
     }
     
+    /**
+     * recives the images of the crops
+     */
     protected abstract int getImages();
+    
 }

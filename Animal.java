@@ -1,11 +1,13 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Animal here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Abstract class created for animal classes to inherit.
+ * mainly used for creating animations.
+ *
+ * @author Kevin Pan Haris Syed
+ * @version April 2018
  */
+
 public abstract class Animal extends Actor
 {
     protected int[][] delta = {{0,-1},{1,0},{0,1},{-1,0}}; 
@@ -28,6 +30,12 @@ public abstract class Animal extends Actor
     }
     
     //running along with animations
+    /**
+ 	* Method used for creating the name of the various pictures added in the image file for animations
+ 	*
+ 	* @param direction  the direction is declared for subclasses to fill in
+ 	* @param speed  	declared for the subclasses to fill in
+ 	*/
     protected void run(int direction,int speed){
         counter++;
         if(lastDirection!=direction)
@@ -43,13 +51,28 @@ public abstract class Animal extends Actor
         lastDirection = direction;
     }
     
+     /**
+ 	* created for subclasses to get name
+ 	*/
     public abstract String getName();
     
+    /**
+ 	* created for subclasses to obtain their walking images
+ 	*/
     public abstract int getWalkImages();
     
+    /**
+ 	* Method for farmer is declared
+ 	*/
     public abstract void harvest();
     
     //setting directions
+    /**
+ 	* Method for setting directions
+ 	*
+ 	* @param actor   used to get xy coordinates
+ 	* @param speed   set the speed for each direction
+ 	*/
     protected void goTo(Actor actor){
         if(this.getX()<actor.getX()){
             run(1,1);
@@ -69,6 +92,12 @@ public abstract class Animal extends Actor
         }
     }
     
+    /**
+ 	* used for location tracking
+ 	*
+ 	* @param actor	used to obtain xy coordinates
+ 	* @return boolean return location, used to see if this actor is at a specific spot
+ 	*/
     protected boolean isAt(Actor actor){
         return (this.getX()==actor.getX()&&this.getY()==actor.getY());
     }

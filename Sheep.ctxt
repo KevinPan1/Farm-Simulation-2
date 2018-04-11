@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=int\ getWalkImages()
+comment0.text=\r\n\ @return\ sends\ the\ walking\ images\r\n
 comment1.params=
 comment1.target=java.lang.String\ getName()
+comment1.text=\r\n\ @return\ sends\ the\ name\ of\ the\ animal\r\n
 comment2.params=
 comment2.target=void\ harvest()
 numComments=3

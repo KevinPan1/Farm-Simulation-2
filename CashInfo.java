@@ -3,11 +3,13 @@ import java.awt.Color;
 import java.awt.Font;
 
 /**
- * Write a description of class CashInfo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class that displays the amount of cash the farmer has.
+ * text color is white and font is Helvetica size 20
+ *
+ * @author Kevin Pan Haris Syed
+ * @version April 2018
  */
+
 public class CashInfo extends HUD
 {
     private GreenfootImage image = new GreenfootImage(200,45);
@@ -16,6 +18,10 @@ public class CashInfo extends HUD
     private String space = "        ";
     private String space1 = "         ";
 
+     /**
+ 	* Color and font is set on the text.
+ 	* text is formatted
+ 	*/
     public CashInfo(){
         image.setColor(textColor);
         image.setFont(textFont);
@@ -25,6 +31,11 @@ public class CashInfo extends HUD
     }
     
     //update cash when items are sold
+    /**
+ 	* method for updating cash when items are sold.
+ 	*
+ 	* @param cash  text is updated for cash in integers
+ 	*/
     public void update(int cash){
         image.clear();
         image.drawString(zeroAdder(cash,8), 85,30);

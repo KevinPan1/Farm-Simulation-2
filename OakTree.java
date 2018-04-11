@@ -1,10 +1,11 @@
 import greenfoot.*;
 
 /**
- * Write a description of class OakTree here.
+ * Asthetics that make the simulation beutiful
+ * An oak tree
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip
+ * @version April 2018
  */
 public class OakTree extends Aesthetics
 {

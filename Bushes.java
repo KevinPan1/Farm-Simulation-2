@@ -1,10 +1,11 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Bushes here.
+ * Asthetics that make the simulation beutiful
+ * A bush
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip
+ * @version April 2018
  */
 public class Bushes extends Aesthetics
 {

@@ -1,10 +1,11 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Farmland here.
+ * The tiles used by the human to plant on
+ * Changes between a dry and a wet state
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Kevin Pan
+ * @version April 10 2018
  */
 public class Farmland extends Building
 {
@@ -20,10 +21,18 @@ public class Farmland extends Building
     private Crop plant;
     //crops are assigned a number 
     
+    /**
+     * Determains the duration of the wet tile
+     */
     public Farmland(){
         wetDuration=1000+Greenfoot.getRandomNumber(1500);
     }
     
+    /**
+     * Determains the type of plant the seeds are for
+     * 
+     * @param type  The variable to determaine the seed
+     */
     public void plant(int type){
         if(type==0){
             plant=new Corn(this);
@@ -42,6 +51,9 @@ public class Farmland extends Building
         plantInWorld=true;
     }
     
+    /**
+     * Checks to determain if the tile is wet or not and controlls the duration of the time its wet
+     */
     public void act(){
         //if wet timer and tile is wet equals zero
         if(isWet&&wetTimer==0){
@@ -59,11 +71,17 @@ public class Farmland extends Building
     }
     
     //method to remove plants
+    /**
+     * checks to remove plant
+     */
     public void removePlant(){
         plantInWorld=false;
     }
     
     //method for watering
+    /**
+     * is called when the soil becomes wet
+     */
     public void water(){
         wetTimer=wetDuration;
         if(!isWet){
@@ -73,6 +91,9 @@ public class Farmland extends Building
     }
     
     //to indicate if there is a plant on this tile
+    /**
+     * Indicates if theres a plant on this tile
+     */
     public boolean hasPlant(){
         return plantInWorld;
     }

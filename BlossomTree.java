@@ -1,10 +1,11 @@
 import greenfoot.*;
 
 /**
- * Write a description of class BlossomTree here.
+ * Asthetics that make the simulation beutiful
+ * A blossom tree
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip
+ * @version April 2018
  */
 public class BlossomTree extends Aesthetics
 {

@@ -1,7 +1,15 @@
 import greenfoot.*;
 import java.util.*;
 import java.awt.*;
-/*
+/**
+ * This is a farm simulation that runs on the amount of money the farmer has
+ * He gains money from growing crops and selling them to the market along side
+ * maneging milks and eggs as well.
+ * The price of the crops and goods are determained by the trade market which may be doing well at times 
+ * or it may be doing poorly
+ * Each crop grows at a different speed, some become rotten after a while
+ * There a special button that blow up all the farmer's crops 
+ * There is a special button that gives the farmer more cash
  * Sources used for Sprites:
  * https://www.spriters-resource.com/game_boy_advance/hmfomt/
  * https://www.spriters-resource.com/ds_dsi/hmdscute/
@@ -24,6 +32,14 @@ import java.awt.*;
  * https://gameblox.org/editor/6680/ - milk
  * https://www.freelancer.com/contest/Design-a-big-red-button-logo-940451-byentry-12211223.html?utm_expid=294858-566.5XyInbHKSlyskM-GmmPexA.0&utm_referrer=https:%2F%2Fwww.google.ca%2F red button
  * 
+ * 
+ * @author Kevin Pan: Building, Crop, HUD, Animal 
+ * @author Haris Syed: HUD, Explosion, Nuke, Animal  
+ * @author Brian Yip: Building, Crop, Asthetics  
+ * @author Xavier Law: building, Crops, HUD  
+ * @author Aashwin J.
+ * 
+ * @version April 2018
  */
 public class MyWorld extends World
 {
@@ -125,6 +141,12 @@ public class MyWorld extends World
     
     private int task = 0;
     
+    /**
+     * Sets up the orgin of the world
+     * Sets the size of the world
+     * Has the placements of all objects
+     * Plays the music
+     */
     public MyWorld()
     {    
         super(960, 640, 1);
@@ -287,11 +309,18 @@ public class MyWorld extends World
     }
     
     //crops are added into inventory when harvested
+    /**
+     *Adds the crops to the farmers inventory when the crops are picked up 
+     *@param the type of crop
+     */
     public void addCropInventory(String crop){
         inventory.put(crop, inventory.get(crop)+1);
     }
     
     //price are randomly chosen for each item
+    /**
+     *makes the trade market very volitile, prices are changing randomly  
+     */
     private void adjustPrices(){
         for (String key : price.keySet()) {
             price.put(key, price.get(key)+Greenfoot.getRandomNumber(delta*2+1)-delta);
@@ -302,11 +331,18 @@ public class MyWorld extends World
     }
     
     //returns the current amount of cash
+    /**
+     *@return the current amount of cash
+     */
     public int getCurrentCash(){
         return currentCash;
     }
     
     //change the amount of money
+    /**
+     *changes the amount of money
+     *@param the amount of change that should be made to the amount of money
+     */
     public void changeCash(int delta){
         currentCash += delta;
         if(currentCash<0)
@@ -314,6 +350,9 @@ public class MyWorld extends World
     }
     
     //used to sell product
+    /**
+     *sells the goods
+     */
     public void sellProduce(){
         cash.play();
         for(String key: inventory.keySet()){
@@ -325,14 +364,23 @@ public class MyWorld extends World
         }
     }
     
+    /**
+     *@return gets market
+     */
     public Actor getMarket(){
         return market;
     }
     
+    /**
+     *@return gets house
+     */
     public Actor getHouse(){
         return house;
     }
     
+    /**
+     * All the tasks that the farmer has to do involving farming, gathering, selling, and sleeping
+     */
     public void act()
     {
         cnt++;
@@ -375,6 +423,10 @@ public class MyWorld extends World
         cashInfo.update(currentCash);
     }
     
+    /**
+     *checks to see the time, determains if it should be night time
+     *then adgusts the image to a darker shade
+     */
     public void animateNight(){
         // check if transition hour
         setBackground(new GreenfootImage(bg)); 
@@ -388,12 +440,18 @@ public class MyWorld extends World
         getBackground().drawImage(dark, 0, 0);
     }
     
+    /**
+     *Method controlls volume
+     */
     public void volume()
     {
         //Method for controlling the volume
-        backgroundMusic.setVolume(25);
+        backgroundMusic.setVolume(100);
     }
     
+    /**
+     *increases tasks
+     */
     public void increaseTasks(){
         task++;
     }

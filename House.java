@@ -1,17 +1,13 @@
 import greenfoot.*;
 
 /**
- * Write a description of class House here.
+ * Image used for the coop
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip and Xavier Law
+ * @version April 2018
  */
 public class House extends Building
 {
-    /**
-     * Act - do whatever the House wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         // Add your action code here.

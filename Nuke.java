@@ -1,16 +1,17 @@
 import greenfoot.*;
 import java.util.List;
 /**
- * Write a description of class Nuke here.
+ * A stationary explosion that dissappears after the animation ends
+ * The Crops become rotten
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Haris Syed
+ * @version April 2018
  */
 public class Nuke extends Actor
 {
+    
     /**
-     * Act - do whatever the Nuke wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * when theis button is clicked, the plants become rotten
      */
     public void act() 
     {

@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Cash here.
+ * The cash that the human starts off with
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brian Yip
+ * @version April 2018
  */
 public class Cash extends Actor
 {

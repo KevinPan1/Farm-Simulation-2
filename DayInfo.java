@@ -3,11 +3,15 @@ import java.awt.Color;
 import java.awt.Font;
 
 /**
- * Write a description of class CashInfo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class that creates and displays the amount of days that has passed
+ * since the beginning of the simulation.
+ * The dimension is 200,45.
+ * Text color is white, font is Helvetica size 20
+ *
+ * @author Kevin Pan Haris Syed
+ * @version April 2018
  */
+
 public class DayInfo extends HUD
 {
     private GreenfootImage image = new GreenfootImage(200,45);
@@ -16,6 +20,10 @@ public class DayInfo extends HUD
     private String space = "        ";
     private String space1 = "         ";
 
+    /**
+ 	* Color and font is set for text
+ 	* text is properly positioned
+ 	*/
     public DayInfo(){
         image.setColor(textColor);
         image.setFont(textFont);
@@ -24,6 +32,11 @@ public class DayInfo extends HUD
         setImage(image);
     }
     
+    /**
+ 	* Method used for updating the amount of days
+ 	*
+ 	* @param day  days takes in the amount of days in integers
+ 	*/
     public void update(int day){
         image.clear();
         image.drawString(zeroAdder(day,3), 100,30);

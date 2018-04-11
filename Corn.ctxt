@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=land
 comment0.target=Corn(Farmland)
+comment0.text=\r\n\ places\ the\ corn\ on\ the\ the\ farm\ tile\r\n\ @param\ takes\ the\ farmland\ tile\r\n
 comment1.params=
 comment1.target=java.lang.String\ getName()
+comment1.text=\r\n\ @return\ sends\ the\ name\ of\ the\ class\r\n
 comment2.params=
 comment2.target=int\ getImages()
+comment2.text=\r\n\ @return\ sends\ the\ image\ of\ this\ plant\r\n
 numComments=3
