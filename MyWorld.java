@@ -58,7 +58,9 @@ public class MyWorld extends World
     //animal classes are declared
     private Human player = new Human();
     private Cow cow = new Cow();
+    private Cow cow2 = new Cow();
     private Chicken chicken = new Chicken();
+    private Chicken chicken2 = new Chicken();
     private Sheep sheep = new Sheep();
     
     //arrays of farmland tiles and aesthetics declared
@@ -153,11 +155,6 @@ public class MyWorld extends World
         
         dayTimer=timeRate*6; 
         
-        //method to set volume of the music
-        volume();
-        //music plays in loop
-        backgroundMusic.playLoop();
-        
         // set main background image (scaled to window)
         GreenfootImage background = new GreenfootImage("sand2.jpg");
         background.scale(960, 640);
@@ -168,10 +165,12 @@ public class MyWorld extends World
         
         //order for classes overlapping each other
         setPaintOrder(Explosion.class,FlowerTree.class, BlossomTree.class, PurpleTree.class,Building.class,HUD.class,Human.class,Animal.class,Crop.class,Farmland.class);
-        addObject(player, 400, 400);
-        addObject(cow, 200, 200);
-        addObject(sheep, 300,300);
-        addObject(chicken, 500,500);
+        addObject(player, 50, 50);
+        addObject(cow, 700, 50);
+        addObject(cow2, 700, 50);
+        addObject(sheep, 700,50);
+        addObject(chicken, 400,50);
+        addObject(chicken2, 400,50);
         
         //creates OakTrees for forest randomized
         for(int i=0;i<50;++i){
@@ -383,6 +382,10 @@ public class MyWorld extends World
      */
     public void act()
     {
+        //method to set volume of the music
+        volume();
+        //music plays in loop
+        backgroundMusic.playLoop();
         cnt++;
         if(cnt%60==0){
             adjustPrices();
@@ -399,10 +402,10 @@ public class MyWorld extends World
             player.collectCrops();
         }else if(task==3&&player.isIdle()){
             player.changeIdle(false);
-            player.sellCrops();
+            player.collectAnimals();
         }else if(task==4&&player.isIdle()){
             player.changeIdle(false);
-            player.collectAnimals();
+            player.sellCrops();
         }else if(task==5&&player.isIdle()){
             player.changeIdle(false);
             player.goHome();
@@ -417,6 +420,7 @@ public class MyWorld extends World
             day++;
             dayInfo.update(day);
             currentCash-=500;
+            currentCash=Math.max(0,currentCash);
         }
         info.update(inventory.get("corn"), inventory.get("cucumber"), inventory.get("potato"), inventory.get("strawberry"), inventory.get("tomato"), inventory.get("radish"), inventory.get("eggs"), inventory.get("milk"));
         tradeInfo.update(price.get("corn"), price.get("cucumber"), price.get("potato"), price.get("strawberry"), price.get("tomato"), price.get("radish"), price.get("eggs"), price.get("milk"));

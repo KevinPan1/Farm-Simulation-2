@@ -90,6 +90,7 @@ public abstract class Crop extends Actor
      */
     public void setRotten(){
         rotten=true;
+        fullGrown=true;
         setImage(getName()+"Rotten.png");
     }
     
