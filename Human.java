@@ -18,6 +18,7 @@ public class Human extends Animal
     private int cropCounter;
     private int seedCounter;
     private int sellCounter;
+    private int homeCounter;
     private List<Actor> land;
     private List<Actor> crops;
     private List<Actor> seeds;
@@ -25,44 +26,19 @@ public class Human extends Animal
     private int cropIndex=-1;
     private int seedIndex=-1;
     private int sellIndex=-1;
+    private int homeIndex=-1;
     private int temp;
     //used for farming process
     private boolean isWatering;
     private boolean isCroping;
     private boolean isSeeding; 
     private boolean isSelling;
+    private boolean isResting;
+    
+    private boolean isIdle=true;
+    private Actor target;
     
     public void act(){
-        if(Greenfoot.isKeyDown("up"))
-            run(0,1);
-        else if(Greenfoot.isKeyDown("right"))
-            run(1,1);
-        else if(Greenfoot.isKeyDown("down"))
-            run(2,1);
-        else if(Greenfoot.isKeyDown("left"))
-            run(3,1);        
-        if(counter>0)
-            counter--;
-        if(counter==0&&Greenfoot.isKeyDown("u")){
-            counter=100;
-            placeFarmland();
-        }
-        if(!isWatering&&counter==0&&Greenfoot.isKeyDown("o")){
-            counter=100;
-            waterCrops();
-        }
-        if(!isCroping&&counter==0&&Greenfoot.isKeyDown("p")){
-            counter=100;
-            collectCrops();
-        }
-        if(!isSeeding&&counter==0&&Greenfoot.isKeyDown("i")){
-            counter=100;
-            plantSeeds();
-        }
-        if(!isSelling&&counter==0&&Greenfoot.isKeyDown("1")){
-            counter=100;
-            sellCrops();
-        }
         if(!isSelling&&sellIndex!=-1){
             if(isAt(((MyWorld)getWorld()).getMarket())){
                 isSelling=true;
@@ -90,6 +66,8 @@ public class Human extends Animal
         if(!isSeeding&&seedIndex!=-1){
             if(((MyWorld)getWorld()).getCurrentCash()<=0){
                 seedIndex=-1;
+                changeIdle(true);;
+                ((MyWorld)getWorld()).increaseTasks();
                 return;
             }
             if(isAt(seeds.get(seedIndex))){
@@ -104,6 +82,8 @@ public class Human extends Animal
                 ((MyWorld)(getWorld())).sellProduce();
                 sellIndex=-1;
                 isSelling=false;
+                changeIdle(true);;
+                ((MyWorld)getWorld()).increaseTasks();
             }
             temp++;
         }
@@ -116,6 +96,8 @@ public class Human extends Animal
                     if(landIndex==land.size()-1){
                         setImage("maleWalk"+direction+".0.png");
                         landIndex=-1;
+                        changeIdle(true);;
+                        ((MyWorld)getWorld()).increaseTasks();
                     }else{
                         landIndex++;
                     }
@@ -134,6 +116,8 @@ public class Human extends Animal
                 ((Crop)crops.get(cropIndex)).collect();
                 if(cropIndex==crops.size()-1){
                     cropIndex=-1;
+                    changeIdle(true);;
+                    ((MyWorld)getWorld()).increaseTasks();
                 }else{
                     cropIndex++;
                 }
@@ -148,9 +132,20 @@ public class Human extends Animal
                 ((Farmland)seeds.get(seedIndex)).plant(Greenfoot.getRandomNumber(6));
                 if(seedIndex==seeds.size()-1){
                     seedIndex=-1;
+                    changeIdle(true);;
+                    ((MyWorld)getWorld()).increaseTasks();
                 }else{
                     seedIndex++;
                 }
+            }
+        }
+        if(isResting){
+            if(isAt(target)){
+                isResting=false;
+                changeIdle(true);;
+                ((MyWorld)getWorld()).increaseTasks();
+            }else{
+                goTo(target);
             }
         }
     }
@@ -177,8 +172,12 @@ public class Human extends Animal
                 iter.remove();
             }
         }
-        if(seeds.size()>0)
+        if(seeds.size()>0){
             seedIndex=0;
+        }else{
+            changeIdle(true);;
+            ((MyWorld)getWorld()).increaseTasks();
+        }
     }
     
     //method for watering crops
@@ -190,8 +189,12 @@ public class Human extends Animal
                 iter.remove();
             }
         }
-        if(seeds.size()>0)
+        if(!land.isEmpty()){
             landIndex=0;
+        }else{
+            changeIdle(true);;
+            ((MyWorld)getWorld()).increaseTasks();
+        }
     }
     
     //method for harvesting
@@ -203,12 +206,29 @@ public class Human extends Animal
                 iter.remove();
             }
         }
-        if(crops.size()>0)
+        if(!crops.isEmpty())
             cropIndex=0;
+        else{
+            changeIdle(true);;
+            ((MyWorld)getWorld()).increaseTasks();
+        }
+    }
+    
+    public void goHome(){
+        isResting=true;
+        target=((MyWorld)getWorld()).getHouse();
     }
     
     //method for selling
     public void sellCrops(){
         sellIndex=0;
+    }
+    
+    public void changeIdle(boolean idleStatus){
+        isIdle=idleStatus;
+    }
+    
+    public boolean isIdle(){
+        return isIdle;
     }
 }

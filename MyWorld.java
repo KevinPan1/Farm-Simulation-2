@@ -26,7 +26,7 @@ public class MyWorld extends World
     
     private HashMap<String,Integer> inventory = new HashMap<String,Integer>();
     private HashMap<String,Integer> price = new HashMap<String,Integer>();
-    private int cashStart = 1000;
+    private int cashStart = 500;
     private int currentCash;
     private int delta = 10;
     //country music
@@ -111,9 +111,14 @@ public class MyWorld extends World
    
     private Market market = new Market();
     
+    private int task = 0;
+    
     public MyWorld()
     {    
-        super(960, 640, 1); 
+        super(960, 640, 1);
+        
+        dayTimer=timeRate*6; 
+        
         //method to set volume of the music
         volume();
         //music plays in loop
@@ -308,8 +313,14 @@ public class MyWorld extends World
         return market;
     }
     
+    public Actor getHouse(){
+        return house;
+    }
+    
     public void act()
     {
+        
+        System.out.println(task);
         cnt++;
         if(cnt%5==0){
             fps.update(cnt,50);
@@ -317,32 +328,58 @@ public class MyWorld extends World
         if(cnt%60==0){
             adjustPrices();
         }
+        
+        if(task==0&&player.isIdle()){
+            player.changeIdle(false);
+            player.plantSeeds();
+        }else if(task==1&&player.isIdle()){
+            player.changeIdle(false);
+            player.waterCrops();
+        }else if(task==2&&player.isIdle()){
+            player.changeIdle(false);
+            player.collectCrops();
+        }else if(task==3&&player.isIdle()){
+            player.changeIdle(false);
+            player.sellCrops();
+        }else if(task==4&&player.isIdle()){
+            player.changeIdle(false);
+            player.goHome();
+        }else if(task==5&&player.isIdle()){
+            dayTimer++;
+            animateNight();
+        }
+        
+        if(dayTimer==timeRate*6){
+            task=0;
+            dayTimer=0;
+        }
         info.update(inventory.get("corn"), inventory.get("cucumber"), inventory.get("potato"), inventory.get("strawberry"), inventory.get("tomato"), inventory.get("radish"), inventory.get("eggs"), inventory.get("milk"));
         tradeInfo.update(price.get("corn"), price.get("cucumber"), price.get("potato"), price.get("strawberry"), price.get("tomato"), price.get("radish"), price.get("eggs"), price.get("milk"));
         cashInfo.update(currentCash);
         
-        /*// next moment in time
-        dayTimer = (dayTimer+1)%(24*timeRate); 
-        // determine day or night time
-        boolean afterdusk = dayTimer < 12*timeRate; 
+    }
+    
+    public void animateNight(){
         // check if transition hour
-        if ((dayTimer/timeRate)%12 == 11) 
-        {
-            // set main background image
-            setBackground(new GreenfootImage(bg)); 
-            // determine minute in transition hour
-            int minute = 60*(dayTimer%timeRate)/timeRate; 
-            // adjust darkness
-            dark.setTransparency(afterdusk ? 3*minute : 180-3*minute); 
-            // add darkness to main background image
-            getBackground().drawImage(dark, 0, 0); 
-        }*/
+        setBackground(new GreenfootImage(bg)); 
+        // adjust darkness
+        if(dayTimer/timeRate==0)
+            dark.setTransparency((int)((dayTimer*1.0/timeRate)*180));
+        else if(dayTimer/timeRate==5){
+            dark.setTransparency(180-(int)(((dayTimer*1.0-timeRate*5)/(timeRate))*180));
+        }
+        // add darkness to main background image
+        getBackground().drawImage(dark, 0, 0);
     }
     
     public void volume()
     {
         //Method for controlling the volume
         backgroundMusic.setVolume(0);
+    }
+    
+    public void increaseTasks(){
+        task++;
     }
 }
 
